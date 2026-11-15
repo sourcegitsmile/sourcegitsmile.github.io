@@ -2,7 +2,7 @@
   "slug": "acrewise",
   "name": "Acrewise",
   "device_name": "Acrewise",
-  "tagline": "Measure land area, perimeter and distance on a satellite map — your measurements stay on your iPhone, no account needed.",
+  "tagline": "Measure land area, perimeter and distance on a satellite map — your measurements stay on your iPhone or iPad, no account needed.",
   "app_store_id": "",
   "contact_email": "hoangdovan.bravo@gmail.com",
   "last_updated": "2026-11-15",
@@ -10,7 +10,7 @@
   "ads": false,
   "tracking": true,
   "analytics": true,
-  "storage_summary": "Your measurements — the points you place, their titles and notes — and your settings are stored only on your iPhone. Acrewise has no account and no server of its own. Map imagery and place search come from Apple Maps, and anonymous usage events go to Google Analytics for Firebase so we can improve the app.",
+  "storage_summary": "Your measurements — the points you place, their titles and notes — and your settings are stored only on your iPhone or iPad. Acrewise has no account and no server of its own. Map imagery and place search come from Apple Maps, and anonymous usage events go to Google Analytics for Firebase so we can improve the app.",
   "nothing_sent_detail": "Your measurements, their coordinates, titles and notes, and your location are never sent to us or to any analytics service.",
   "processors": {
     "apple_maps": {
@@ -52,12 +52,12 @@
   "stored_on_device": [
     "Your saved measurements: the points on the map, the area, perimeter or distance, and the title and notes you write.",
     "Your settings: area and length units and default map style.",
-    "PDF reports you export are created on your iPhone and go only where you choose to share them.",
+    "PDF reports you export are created on your iPhone or iPad and go only where you choose to share them.",
     "Delete a measurement at any time in Saved Projects, or delete everything by deleting the app."
   ],
   "not_collected": [
     "Your name, email address or any account, because Acrewise has no sign-in.",
-    "Your location. Acrewise uses your location only on your iPhone to center the map on you; it is never sent to us or to Google Analytics.",
+    "Your location. Acrewise uses your location only on your iPhone or iPad to center the map on you; it is never sent to us or to Google Analytics.",
     "Your measurements, coordinates, titles and notes.",
     "Payment details — Acrewise Pro is bought through Apple, and we never see your card, Apple Account or name.",
     "Your contacts, photos or browsing history."
@@ -65,7 +65,7 @@
   "permissions": [
     {
       "name": "Location (While Using the App)",
-      "why": "to center the map on where you are so you can measure the land around you. Your location stays on your iPhone. You can say no and still measure by moving the map or searching an address."
+      "why": "to center the map on where you are so you can measure the land around you. Your location stays on your iPhone or iPad. You can say no and still measure by moving the map or searching an address."
     },
     {
       "name": "Tracking (App Tracking Transparency)",
@@ -76,7 +76,7 @@
     "**Delete any measurement** in Saved Projects (swipe left or the ••• menu).",
     "**Turn tracking off or on** in iOS Settings → Privacy & Security → Tracking → Acrewise.",
     "**Turn location access off or on** in iOS Settings → Privacy & Security → Location Services → Acrewise.",
-    "**Delete all your data** by deleting the app — everything lives only on your iPhone."
+    "**Delete all your data** by deleting the app — everything lives only on your iPhone or iPad."
   ],
   "support_faq": [
     {
@@ -97,7 +97,7 @@
     },
     {
       "q": "How do I cancel or restore my subscription?",
-      "a": "Cancel any time in iOS Settings → your name → Subscriptions → Acrewise. To restore Pro on a new iPhone, tap **Restore Purchases** in Settings with the same Apple Account."
+      "a": "Cancel any time in iOS Settings → your name → Subscriptions → Acrewise. To restore Pro on a new iPhone or iPad, tap **Restore Purchases** in Settings with the same Apple Account."
     },
     {
       "q": "How do I get a refund?",
@@ -109,5 +109,5 @@
     }
   ],
   "purchases": true,
-  "tracking_detail": "When you first open Acrewise, iOS asks whether the app may track you (App Tracking Transparency). Only if you tap **Allow**, Google Analytics for Firebase receives your device's advertising identifier (IDFA) so we can tell which of our Google Ads brought new users. Google also uses on-device conversion measurement, which matches an ad to an install on your iPhone without sending your name, email or phone number. If you tap **Ask App Not to Track**, no IDFA is collected. You can change this any time in iOS Settings → Privacy & Security → Tracking. Your measurements, coordinates, notes, search text and location are never used for this."
+  "tracking_detail": "When you first open Acrewise, iOS asks whether the app may track you (App Tracking Transparency). Only if you tap **Allow**, Google Analytics for Firebase receives your device's advertising identifier (IDFA) so we can tell which of our Google Ads brought new users. Google also uses on-device conversion measurement, which matches an ad to an install on your iPhone or iPad without sending your name, email or phone number. If you tap **Ask App Not to Track**, no IDFA is collected. You can change this any time in iOS Settings → Privacy & Security → Tracking. Your measurements, coordinates, notes, search text and location are never used for this."
 }
