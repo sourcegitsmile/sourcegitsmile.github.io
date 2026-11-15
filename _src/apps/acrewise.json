@@ -1,0 +1,107 @@
+{
+  "slug": "acrewise",
+  "name": "Acrewise",
+  "device_name": "Acrewise",
+  "tagline": "Measure land area, perimeter and distance on a satellite map — your measurements stay on your iPhone, no account needed.",
+  "app_store_id": "",
+  "contact_email": "hoangdovan.bravo@gmail.com",
+  "last_updated": "2026-11-15",
+  "terms_url": "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+  "ads": false,
+  "tracking": false,
+  "analytics": true,
+  "storage_summary": "Your measurements — the points you place, their titles and notes — and your settings are stored only on your iPhone. Acrewise has no account and no server of its own. Map imagery and place search come from Apple Maps, and anonymous usage events go to Google Analytics for Firebase so we can improve the app.",
+  "nothing_sent_detail": "Your measurements, their coordinates, titles and notes, and your location are never sent to us or to any analytics service.",
+  "processors": {
+    "apple_maps": {
+      "name": "Apple Maps (MapKit)",
+      "purpose": "Shows the map and satellite imagery, finds the places and addresses you search for, and draws the map picture used in shared images and PDF reports.",
+      "data": "the map area you are viewing and the text you type into the search bar, handled by Apple. Apple does not link this to your Apple Account.",
+      "policy_url": "https://www.apple.com/legal/privacy/"
+    },
+    "google_analytics": {
+      "name": "Google Analytics for Firebase",
+      "purpose": "Measures how the app is used (for example whether a measurement was finished or the upgrade screen was opened) so we can fix problems and improve Acrewise. Not used for advertising or cross-app tracking.",
+      "data": "usage events (never your measurements, coordinates, titles, notes, search text or location), an app-instance identifier, app version, device model, OS version, locale, approximate region derived from your IP address",
+      "policy_url": "https://firebase.google.com/support/privacy"
+    },
+    "apple_storekit": {
+      "name": "Apple (App Store purchases)",
+      "purpose": "Processes the Acrewise Pro subscription and verifies that it is active.",
+      "data": "your purchase receipt, handled by Apple. We never see your payment details, Apple Account or name.",
+      "policy_url": "https://www.apple.com/legal/privacy/"
+    }
+  },
+  "data_sent": [
+    {
+      "what": "The map area on screen and the text you type into Search",
+      "to": "apple_maps",
+      "why": "Show the map, satellite imagery and search results"
+    },
+    {
+      "what": "Usage events (never your measurements, coordinates, notes, search text or location), app-instance identifier, app and device info, approximate region",
+      "to": "google_analytics",
+      "why": "Understand how the app is used and improve it"
+    },
+    {
+      "what": "Your purchase receipt",
+      "to": "apple_storekit",
+      "why": "Confirm that your Acrewise Pro subscription is active"
+    }
+  ],
+  "stored_on_device": [
+    "Your saved measurements: the points on the map, the area, perimeter or distance, and the title and notes you write.",
+    "Your settings: area and length units and default map style.",
+    "PDF reports you export are created on your iPhone and go only where you choose to share them.",
+    "Delete a measurement at any time in Saved Projects, or delete everything by deleting the app."
+  ],
+  "not_collected": [
+    "Your name, email address or any account, because Acrewise has no sign-in.",
+    "Your location. Acrewise uses your location only on your iPhone to center the map on you; it is never sent to us or to Google Analytics.",
+    "Your measurements, coordinates, titles and notes.",
+    "Your advertising identifier (IDFA), contacts, photos or browsing history. Acrewise does not track you across apps and never shows the App Tracking Transparency prompt.",
+    "Payment details — Acrewise Pro is bought through Apple, and we never see your card, Apple Account or name."
+  ],
+  "permissions": [
+    {
+      "name": "Location (While Using the App)",
+      "why": "to center the map on where you are so you can measure the land around you. Your location stays on your iPhone. You can say no and still measure by moving the map or searching an address."
+    }
+  ],
+  "your_controls": [
+    "**Delete any measurement** in Saved Projects (swipe left or the ••• menu).",
+    "**Turn location access off or on** in iOS Settings → Privacy & Security → Location Services → Acrewise.",
+    "**Delete all your data** by deleting the app — everything lives only on your iPhone."
+  ],
+  "support_faq": [
+    {
+      "q": "How accurate are the measurements?",
+      "a": "Acrewise computes area and distance on the Earth's curved surface, so the maths itself is precise. Accuracy depends on where you place the points and on the quality of the satellite imagery. Results are estimates for planning — **they are not a legal survey** and should not be used to settle property boundaries."
+    },
+    {
+      "q": "How do I measure an area?",
+      "a": "Tap **Area** on the map, then tap each corner of the land. The area and perimeter appear as soon as you place the third point. Drag a point to adjust it, tap between two points to add one, and tap **Finish** to save."
+    },
+    {
+      "q": "Which units can I use?",
+      "a": "Area in acres, square feet, square yards, square meters, hectares, square kilometers and square miles; length in feet, yards, meters, kilometers and miles. Set your defaults in **Settings**."
+    },
+    {
+      "q": "What does Acrewise Pro add?",
+      "a": "Measuring is free for everyone, and the free plan saves up to 3 projects. **Acrewise Pro** adds unlimited saved projects and PDF reports you can send to clients. It is an auto-renewing subscription (monthly or yearly); the yearly plan may include a free trial."
+    },
+    {
+      "q": "How do I cancel or restore my subscription?",
+      "a": "Cancel any time in iOS Settings → your name → Subscriptions → Acrewise. To restore Pro on a new iPhone, tap **Restore Purchases** in Settings with the same Apple Account."
+    },
+    {
+      "q": "How do I get a refund?",
+      "a": "Refunds are handled by Apple. Request one at [reportaproblem.apple.com](https://reportaproblem.apple.com)."
+    },
+    {
+      "q": "Why doesn't the map center on me?",
+      "a": "Location access may be off. Turn it on in iOS Settings → Privacy & Security → Location Services → Acrewise, or search an address instead."
+    }
+  ],
+  "purchases": true
+}
