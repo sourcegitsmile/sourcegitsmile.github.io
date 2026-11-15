@@ -23,7 +23,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 APPS_DIR = ROOT / "_src" / "apps"
 SITE = "https://sourcegitsmile.github.io"
-DEVELOPER = "Hoang DoVan"   # must match the App Store Connect seller / developer name
+DEVELOPER = "Smile Show Technology Limited"   # default; must match the App Store Connect seller. Per-app override: "developer" in the app json
 STUDIO = ""
 APPLE_CANCEL_URL = "https://support.apple.com/en-us/118428"
 
@@ -344,7 +344,7 @@ def privacy(app):
 <p>We may update this policy. The date at the top shows the latest version, and material changes will also be noted in the app's release notes.</p>""")
     n += 1
     sections.append(f"""<h2>{n}. Contact</h2>
-<p>{e(DEVELOPER)}{" (" + e(STUDIO) + ")" if STUDIO else ""} — <a href="mailto:{mail}">{mail}</a></p>""")
+<p>{e(app.get("developer", DEVELOPER))}{" (" + e(STUDIO) + ")" if STUDIO else ""} — <a href="mailto:{mail}">{mail}</a></p>""")
 
     head = f"""  <h1>Privacy Policy</h1>
   <p class="sub">{name} · Last updated {human_date(app['last_updated'])}</p>
