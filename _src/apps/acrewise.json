@@ -8,7 +8,7 @@
   "last_updated": "2026-11-15",
   "terms_url": "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
   "ads": false,
-  "tracking": false,
+  "tracking": true,
   "analytics": true,
   "storage_summary": "Your measurements — the points you place, their titles and notes — and your settings are stored only on your iPhone. Acrewise has no account and no server of its own. Map imagery and place search come from Apple Maps, and anonymous usage events go to Google Analytics for Firebase so we can improve the app.",
   "nothing_sent_detail": "Your measurements, their coordinates, titles and notes, and your location are never sent to us or to any analytics service.",
@@ -21,8 +21,8 @@
     },
     "google_analytics": {
       "name": "Google Analytics for Firebase",
-      "purpose": "Measures how the app is used (for example whether a measurement was finished or the upgrade screen was opened) so we can fix problems and improve Acrewise. Not used for advertising or cross-app tracking.",
-      "data": "usage events (never your measurements, coordinates, titles, notes, search text or location), an app-instance identifier, app version, device model, OS version, locale, approximate region derived from your IP address",
+      "purpose": "Measures how the app is used (for example whether a measurement was finished or the upgrade screen was opened) so we can fix problems and improve Acrewise, and — only if you allow tracking — tells us which Google Ads campaigns brought new users.",
+      "data": "usage events (never your measurements, coordinates, titles, notes, search text or location), an app-instance identifier, app version, device model, OS version, locale, approximate region derived from your IP address, and your advertising identifier (IDFA) only if you allow tracking",
       "policy_url": "https://firebase.google.com/support/privacy"
     },
     "apple_storekit": {
@@ -39,9 +39,9 @@
       "why": "Show the map, satellite imagery and search results"
     },
     {
-      "what": "Usage events (never your measurements, coordinates, notes, search text or location), app-instance identifier, app and device info, approximate region",
+      "what": "Usage events (never your measurements, coordinates, notes, search text or location), app-instance identifier, app and device info, approximate region; advertising identifier (IDFA) only if you allow tracking",
       "to": "google_analytics",
-      "why": "Understand how the app is used and improve it"
+      "why": "Understand how the app is used, improve it, and measure which ads bring new users"
     },
     {
       "what": "Your purchase receipt",
@@ -59,17 +59,22 @@
     "Your name, email address or any account, because Acrewise has no sign-in.",
     "Your location. Acrewise uses your location only on your iPhone to center the map on you; it is never sent to us or to Google Analytics.",
     "Your measurements, coordinates, titles and notes.",
-    "Your advertising identifier (IDFA), contacts, photos or browsing history. Acrewise does not track you across apps and never shows the App Tracking Transparency prompt.",
-    "Payment details — Acrewise Pro is bought through Apple, and we never see your card, Apple Account or name."
+    "Payment details — Acrewise Pro is bought through Apple, and we never see your card, Apple Account or name.",
+    "Your contacts, photos or browsing history."
   ],
   "permissions": [
     {
       "name": "Location (While Using the App)",
       "why": "to center the map on where you are so you can measure the land around you. Your location stays on your iPhone. You can say no and still measure by moving the map or searching an address."
+    },
+    {
+      "name": "Tracking (App Tracking Transparency)",
+      "why": "to measure which of our ads brought you to Acrewise. Asked once when you first open the app; the app works the same whether you allow it or not."
     }
   ],
   "your_controls": [
     "**Delete any measurement** in Saved Projects (swipe left or the ••• menu).",
+    "**Turn tracking off or on** in iOS Settings → Privacy & Security → Tracking → Acrewise.",
     "**Turn location access off or on** in iOS Settings → Privacy & Security → Location Services → Acrewise.",
     "**Delete all your data** by deleting the app — everything lives only on your iPhone."
   ],
@@ -103,5 +108,6 @@
       "a": "Location access may be off. Turn it on in iOS Settings → Privacy & Security → Location Services → Acrewise, or search an address instead."
     }
   ],
-  "purchases": true
+  "purchases": true,
+  "tracking_detail": "When you first open Acrewise, iOS asks whether the app may track you (App Tracking Transparency). Only if you tap **Allow**, Google Analytics for Firebase receives your device's advertising identifier (IDFA) so we can tell which of our Google Ads brought new users. Google also uses on-device conversion measurement, which matches an ad to an install on your iPhone without sending your name, email or phone number. If you tap **Ask App Not to Track**, no IDFA is collected. You can change this any time in iOS Settings → Privacy & Security → Tracking. Your measurements, coordinates, notes, search text and location are never used for this."
 }
