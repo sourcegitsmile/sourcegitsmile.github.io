@@ -28,7 +28,7 @@
     },
     "google_analytics": {
       "name": "Google Analytics for Firebase",
-      "purpose": "Measures how the app is used (for example whether a recording was saved, a tool was used or the upgrade screen was opened) so we can fix problems and improve Voice Recorder, and — only if you allow tracking — tells us which of our ads brought new users.",
+      "purpose": "Measures how the app is used (for example whether a recording was saved, a tool was used or the upgrade screen was opened) so we can fix problems and improve Voice Recorder, and — only if you allow tracking — shares installs and purchases with Google Ads so we can tell which of our ads brought new users and subscribers.",
       "data": "usage events (never your recordings, transcripts, summaries, file names or anything you type), an app-instance identifier, purchase events, app version, device model, OS version, locale, approximate region derived from your IP address, diagnostic data, and your advertising identifier (IDFA) only if you allow tracking",
       "policy_url": "https://firebase.google.com/support/privacy"
     }
@@ -40,9 +40,9 @@
       "why": "Turn the recording into text"
     },
     {
-      "what": "Usage and purchase events (never your recordings, transcripts, summaries or file names), app-instance identifier, app and device info, approximate region, diagnostic data; advertising identifier (IDFA) only if you allow tracking",
+      "what": "Usage events and purchase events (product, price and whether it started a free trial — never your recordings, transcripts, summaries or file names), app-instance identifier, app and device info, approximate region, diagnostic data; advertising identifier (IDFA) only if you allow tracking",
       "to": "google_analytics",
-      "why": "Understand how the app is used, fix problems, and measure which ads bring new users"
+      "why": "Understand how the app is used, fix problems, and measure which Google Ads campaigns bring new users and subscribers"
     },
     {
       "what": "Your purchase receipt",
@@ -119,5 +119,5 @@
       "a": "Open **Folders → Recently Deleted** and tap **Restore**. Deleted recordings are kept there for 30 days."
     }
   ],
-  "tracking_detail": "When you first open Voice Recorder, iOS asks whether the app may track you (App Tracking Transparency). Only if you tap **Allow**, Google Analytics for Firebase receives your device's advertising identifier (IDFA) so we can tell which of our ads brought new users. Google also uses on-device conversion measurement, which matches an ad to an install on your device without sending your name, email or phone number. If you tap **Ask App Not to Track**, no IDFA is collected. You can change this any time in iOS Settings → Privacy & Security → Tracking. Your recordings, transcripts and summaries are never used for this."
+  "tracking_detail": "When you first open Voice Recorder, iOS asks whether the app may track you (App Tracking Transparency). We advertise Voice Recorder with Google Ads. Only if you tap **Allow**, Google Analytics for Firebase receives your device's advertising identifier (IDFA), and app installs, the start of a free trial and subscription purchases (product and price) are shared with Google Ads so we can tell which of our ads brought new users and subscribers. Google also uses on-device conversion measurement, which matches an ad to an install on your device without sending your name, email or phone number. If you tap **Ask App Not to Track**, no IDFA is collected; Apple's SKAdNetwork may still tell Google Ads that an ad led to an install, without identifying you or your device. You can change this any time in iOS Settings → Privacy & Security → Tracking. Your recordings, transcripts and summaries are never used for this."
 }
