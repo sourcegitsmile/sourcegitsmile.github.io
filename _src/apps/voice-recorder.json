@@ -1,0 +1,123 @@
+{
+  "slug": "voice-recorder",
+  "name": "Voice Recorder: AI Memo, Notes",
+  "device_name": "Voice Recorder",
+  "tagline": "Record, edit and transcribe voice memos on your iPhone or iPad — recordings, transcripts and summaries stay on your device, no account needed.",
+  "app_store_id": "",
+  "contact_email": "hoangdovan.bravo@gmail.com",
+  "last_updated": "2026-11-16",
+  "terms_url": "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+  "ads": false,
+  "tracking": true,
+  "analytics": true,
+  "purchases": true,
+  "storage_summary": "Your recordings, transcripts, summaries, folders and settings are stored only on your iPhone or iPad. Voice Recorder has no account and no server of its own. Transcription uses Apple Speech Recognition: when your device cannot recognize the selected language on the device, the audio of that recording is sent to Apple for recognition under Apple's privacy policy. Anonymous usage events go to Google Analytics for Firebase so we can improve the app and measure our ads.",
+  "nothing_sent_detail": "Your recordings, transcripts and summaries are never sent to us, to Google Analytics or to any online AI service.",
+  "processors": {
+    "apple_speech": {
+      "name": "Apple Speech Recognition",
+      "purpose": "Turns a recording into text when you tap Transcribe. When your device can recognize the selected language on the device, the app requires on-device processing and the audio does not leave your device. For other languages, Apple transcribes the audio on its servers.",
+      "data": "the audio of the recording you choose to transcribe, only when on-device recognition is not available for that language, handled by Apple",
+      "policy_url": "https://www.apple.com/legal/privacy/"
+    },
+    "apple_storekit": {
+      "name": "Apple (App Store purchases)",
+      "purpose": "Processes the Premium subscription and verifies that it is active.",
+      "data": "your purchase receipt, handled by Apple (we never see your payment details, Apple Account or name)",
+      "policy_url": "https://www.apple.com/legal/privacy/"
+    },
+    "google_analytics": {
+      "name": "Google Analytics for Firebase",
+      "purpose": "Measures how the app is used (for example whether a recording was saved, a tool was used or the upgrade screen was opened) so we can fix problems and improve Voice Recorder, and — only if you allow tracking — tells us which of our ads brought new users.",
+      "data": "usage events (never your recordings, transcripts, summaries, file names or anything you type), an app-instance identifier, purchase events, app version, device model, OS version, locale, approximate region derived from your IP address, diagnostic data, and your advertising identifier (IDFA) only if you allow tracking",
+      "policy_url": "https://firebase.google.com/support/privacy"
+    }
+  },
+  "data_sent": [
+    {
+      "what": "The audio of a recording you choose to transcribe, only for languages your device cannot recognize on the device",
+      "to": "apple_speech",
+      "why": "Turn the recording into text"
+    },
+    {
+      "what": "Usage and purchase events (never your recordings, transcripts, summaries or file names), app-instance identifier, app and device info, approximate region, diagnostic data; advertising identifier (IDFA) only if you allow tracking",
+      "to": "google_analytics",
+      "why": "Understand how the app is used, fix problems, and measure which ads bring new users"
+    },
+    {
+      "what": "Your purchase receipt",
+      "to": "apple_storekit",
+      "why": "Confirm that your Premium subscription is active"
+    }
+  ],
+  "stored_on_device": [
+    "Your recordings and their names, markers, folders and favorites. You can also see the audio files in the Files app under On My iPhone (or On My iPad) › Voice Recorder.",
+    "Transcripts and summaries. Summaries are created on your device: with Apple's on-device AI model on devices with Apple Intelligence (iOS 26 or later), or with a simple built-in method that picks key sentences on other devices.",
+    "Your settings, such as recording quality and appearance.",
+    "Deleted recordings stay in Recently Deleted for 30 days, then are removed. Delete everything at any time by deleting the app."
+  ],
+  "not_collected": [
+    "Your name, email address or any account, because Voice Recorder has no sign-in.",
+    "Your recordings, transcripts and summaries, and the names you give them.",
+    "Your location, contacts, photos or browsing history.",
+    "Payment details — Premium is bought through Apple, and we never see your card, Apple Account or name."
+  ],
+  "permissions": [
+    {
+      "name": "Microphone",
+      "why": "to record audio. The microphone is used only while you are recording. Recording can continue in the background so it is not cut off when you lock the screen or switch apps."
+    },
+    {
+      "name": "Speech Recognition",
+      "why": "to turn a recording into text. Asked only when you first tap Transcribe; you can say no and still record, edit and play back."
+    },
+    {
+      "name": "Tracking (App Tracking Transparency)",
+      "why": "to measure which of our ads brought you to Voice Recorder. Asked once when you first open the app; the app works the same whether you allow it or not."
+    }
+  ],
+  "your_controls": [
+    "**Delete any recording** from the list (swipe left or the ••• menu); it moves to Recently Deleted, where you can delete it for good.",
+    "**Turn tracking off or on** in iOS Settings → Privacy & Security → Tracking → Voice Recorder.",
+    "**Turn microphone or speech recognition access off or on** in iOS Settings → Voice Recorder.",
+    "**Delete all your data** by deleting the app — everything lives only on your iPhone or iPad."
+  ],
+  "subscription": {
+    "restore_location": "in the app's Settings tab"
+  },
+  "support_faq": [
+    {
+      "q": "The app can't record.",
+      "a": "Voice Recorder needs microphone access. Open iOS **Settings → Voice Recorder** and turn on **Microphone**."
+    },
+    {
+      "q": "Does recording stop when I lock my phone?",
+      "a": "No. Recording continues in the background until you tap Stop."
+    },
+    {
+      "q": "Where are my recordings stored?",
+      "a": "On your device, inside the app. You can also see the audio files in the Files app under **On My iPhone (or On My iPad) → Voice Recorder**."
+    },
+    {
+      "q": "Transcribe says Speech Recognition is off.",
+      "a": "Open iOS **Settings → Voice Recorder** and turn on **Speech Recognition**."
+    },
+    {
+      "q": "My language isn't working.",
+      "a": "Transcription uses Apple's speech recognition and supports the languages Apple offers on your device. Pick the language before you transcribe. Some languages need an internet connection because Apple transcribes them on its servers."
+    },
+    {
+      "q": "Why is my summary short or simple?",
+      "a": "AI summaries use Apple's on-device model and need an iPhone or iPad with Apple Intelligence turned on (iOS 26 or later). On other devices the app picks the key sentences from the transcript instead."
+    },
+    {
+      "q": "What does Premium add?",
+      "a": "The free version keeps 1 recording. **Premium** removes the limit. It is a yearly auto-renewing subscription that starts with a 3-day free trial. Cancel at least 24 hours before the trial ends to avoid being charged."
+    },
+    {
+      "q": "I deleted a recording by mistake.",
+      "a": "Open **Folders → Recently Deleted** and tap **Restore**. Deleted recordings are kept there for 30 days."
+    }
+  ],
+  "tracking_detail": "When you first open Voice Recorder, iOS asks whether the app may track you (App Tracking Transparency). Only if you tap **Allow**, Google Analytics for Firebase receives your device's advertising identifier (IDFA) so we can tell which of our ads brought new users. Google also uses on-device conversion measurement, which matches an ad to an install on your device without sending your name, email or phone number. If you tap **Ask App Not to Track**, no IDFA is collected. You can change this any time in iOS Settings → Privacy & Security → Tracking. Your recordings, transcripts and summaries are never used for this."
+}
