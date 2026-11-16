@@ -1,0 +1,101 @@
+{
+  "slug": "sketchlight",
+  "name": "Sketchlight",
+  "device_name": "Sketchlight",
+  "tagline": "Turn a photo into lines and trace it on paper with your iPhone or iPad — draw someone you love and give it as a gift.",
+  "app_store_id": "",
+  "contact_email": "hoangdovan.bravo@gmail.com",
+  "last_updated": "2026-11-16",
+  "terms_url": "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+  "ads": false,
+  "tracking": false,
+  "analytics": true,
+  "purchases": true,
+  "storage_summary": "Your photos, sketches, projects, finished drawings, recordings and settings are stored only on your iPhone or iPad. Sketchlight has no account and no server of its own. Turning a photo into lines, finding the subject and finding your sheet of paper all run on your device, and the camera view never leaves it. Anonymous usage events go to Google Analytics for Firebase so we can fix problems and improve the app.",
+  "nothing_sent_detail": "Your photos, the camera view, your drawings and anything you type are never sent to us or to Google Analytics.",
+  "processors": {
+    "apple_storekit": {
+      "name": "Apple (App Store purchases)",
+      "purpose": "Processes the Sketchlight Pro subscription or one-time purchase and verifies that it is active.",
+      "data": "your purchase receipt, handled by Apple (we never see your payment details, Apple Account or name)",
+      "policy_url": "https://www.apple.com/legal/privacy/"
+    },
+    "firebase": {
+      "name": "Google Analytics for Firebase",
+      "purpose": "Measures how the app is used (for example whether a tracing session was started or the upgrade screen was opened) so we can fix problems and improve the app. Never used for advertising or cross-app tracking.",
+      "data": "a small set of usage events and their settings (never your photos, drawings or anything you type), an app-instance identifier, app version, device model, OS version, locale, approximate region derived from your IP address, and purchase events (product and result)",
+      "policy_url": "https://firebase.google.com/support/privacy"
+    }
+  },
+  "data_sent": [
+    {
+      "what": "Usage events and purchase events (never your photos, drawings or anything you type), app-instance identifier, app and device info, locale, approximate region",
+      "to": "firebase",
+      "why": "Understand how the app is used, fix problems and improve the app"
+    },
+    {
+      "what": "Your purchase receipt",
+      "to": "apple_storekit",
+      "why": "Confirm that your Sketchlight Pro purchase is active"
+    }
+  ],
+  "stored_on_device": [
+    "The photos you choose, the sketches made from them, and your tracing projects with their position and opacity.",
+    "Photos of your finished drawings and any tracing recordings you make.",
+    "Your favorite templates, lesson progress, daily challenge streak and settings such as appearance, accent color and reminder time.",
+    "The template library and lessons are built into the app, so they work without an internet connection.",
+    "Delete a project or a drawing at any time in My Art, or delete everything by deleting the app."
+  ],
+  "not_collected": [
+    "Your name, email address or any account, because Sketchlight has no sign-in.",
+    "Your photos, the camera view or your drawings — they never leave your device unless you share them yourself.",
+    "Your advertising identifier (IDFA); Sketchlight does not track you across other companies' apps or websites.",
+    "Your location, contacts or browsing history.",
+    "Payment details — Sketchlight Pro is bought through Apple, and we never see your card, Apple Account or name."
+  ],
+  "permissions": [
+    {
+      "name": "Camera",
+      "why": "to show your picture over the paper so you can trace it, and to photograph your finished drawing. The camera view stays on your device and is never uploaded. You can say no and trace in Light Box mode instead."
+    },
+    {
+      "name": "Photos (add only)",
+      "why": "to save your sketches and drawings to your photo library when you tap Save to Photos. Choosing a photo uses the system photo picker, so Sketchlight never sees the rest of your library."
+    },
+    {
+      "name": "Notifications",
+      "why": "to send the daily challenge reminder at the time you choose. Nothing leaves your device for this."
+    }
+  ],
+  "your_controls": [
+    "**Delete a project or a drawing** in **My Art**, or delete everything by deleting the app — your work lives only on your device.",
+    "**Turn camera, photo saving or notifications off or on** in iOS Settings → Sketchlight.",
+    "**Turn the daily reminder off** in **Settings → Daily challenge** in the app.",
+    "**Manage or cancel your subscription** in iOS Settings → your name → Subscriptions."
+  ],
+  "subscription": {
+    "restore_location": "on the Sketchlight Pro screen, or in Settings"
+  },
+  "support_faq": [
+    {
+      "q": "How do I trace with my phone?",
+      "a": "Pick a template or a photo, then tap **Trace**. Prop your phone on a stand or a stack of books above your paper, line up the picture, tap **Lock**, and trace what you see on the screen onto the paper."
+    },
+    {
+      "q": "I don't have a stand. Can I still trace?",
+      "a": "Yes. Switch to **Light Box** in the trace screen, lay a thin sheet of paper on the screen and trace the picture through it."
+    },
+    {
+      "q": "The camera does not open.",
+      "a": "Open iOS **Settings → Sketchlight** and turn on **Camera**. You can also trace in **Light Box** mode without the camera."
+    },
+    {
+      "q": "How do I restore my purchase?",
+      "a": "Open the **Sketchlight Pro** screen or **Settings** in the app and tap **Restore Purchases**, signed in with the same Apple Account you bought with."
+    },
+    {
+      "q": "How do I delete my data?",
+      "a": "Delete projects and drawings in **My Art**, or delete the app. Your work lives only on your device, so this removes it completely."
+    }
+  ]
+}
