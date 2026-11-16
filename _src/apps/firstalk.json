@@ -1,0 +1,106 @@
+{
+  "slug": "firstalk",
+  "name": "Firstalk: English from Zero",
+  "device_name": "Firstalk",
+  "tagline": "Learn English from zero with short lessons, listening and speaking practice explained in your own language — no account needed.",
+  "app_store_id": "6835430951",
+  "contact_email": "hoangdovan.bravo@gmail.com",
+  "last_updated": "2026-11-16",
+  "terms_url": "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+  "ads": false,
+  "tracking": false,
+  "analytics": true,
+  "purchases": true,
+  "storage_summary": "Your learning progress, review schedule, streak, goals and settings are stored only on your iPhone. Firstalk has no account and no server of its own. Speech recognition runs on your iPhone when your device supports it; otherwise the audio of the sentence you say is sent to Apple to be turned into text, and the app never saves recordings. Anonymous usage events go to Google Analytics for Firebase so we can fix problems and improve lessons.",
+  "nothing_sent_detail": "What you say in speaking exercises is never sent to us or to Google Analytics, and no recording is ever saved.",
+  "processors": {
+    "apple_speech": {
+      "name": "Apple Speech Recognition",
+      "purpose": "Turns the English sentence you say in a speaking exercise into text so the app can check it. When your iPhone can recognize English on the device, the audio does not leave your iPhone. Otherwise Apple processes the audio on its servers.",
+      "data": "the audio of the sentence you say in a speaking exercise, only when on-device recognition is not available, handled by Apple",
+      "policy_url": "https://www.apple.com/legal/privacy/"
+    },
+    "apple_storekit": {
+      "name": "Apple (App Store purchases)",
+      "purpose": "Processes the Firstalk Pro subscription and verifies that it is active.",
+      "data": "your purchase receipt, handled by Apple (we never see your payment details, Apple Account or name)",
+      "policy_url": "https://www.apple.com/legal/privacy/"
+    },
+    "firebase": {
+      "name": "Google Analytics for Firebase",
+      "purpose": "Measures how the app is used (for example whether a lesson was finished or the upgrade screen was opened) so we can fix problems and improve lessons. Never used for advertising or cross-app tracking.",
+      "data": "a small set of usage events and their settings (never what you say or type), an app-instance identifier, app version, device model, OS version, locale, approximate region derived from your IP address, and purchase events (product and result)",
+      "policy_url": "https://firebase.google.com/support/privacy"
+    }
+  },
+  "data_sent": [
+    {
+      "what": "The audio of the sentence you say in a speaking exercise, only when your iPhone cannot recognize English on the device",
+      "to": "apple_speech",
+      "why": "Turn your speech into text so the app can check it"
+    },
+    {
+      "what": "Usage events and purchase events (never what you say or type), app-instance identifier, app and device info, locale, approximate region",
+      "to": "firebase",
+      "why": "Understand how the app is used, fix problems and improve lessons"
+    },
+    {
+      "what": "Your purchase receipt",
+      "to": "apple_storekit",
+      "why": "Confirm that your Firstalk Pro subscription is active"
+    }
+  ],
+  "stored_on_device": [
+    "Your learning progress, finished lessons, review schedule and streak.",
+    "Your settings, such as your explanation language, daily goal, reminder time and slow-audio preference.",
+    "Lesson audio is built into the app, so lessons work without an internet connection.",
+    "Erase your learning data at any time in Me → Settings → Delete learning data, or by deleting the app."
+  ],
+  "not_collected": [
+    "Your name, email address or any account, because Firstalk has no sign-in.",
+    "Voice recordings — the app never saves what you say.",
+    "Your advertising identifier (IDFA); Firstalk does not track you across other companies' apps or websites.",
+    "Your location, contacts, photos or browsing history.",
+    "Payment details — Firstalk Pro is bought through Apple, and we never see your card, Apple Account or name."
+  ],
+  "permissions": [
+    {
+      "name": "Microphone",
+      "why": "to hear the English sentences you say in speaking exercises. The microphone is used only while an exercise is listening, and nothing is recorded or saved. You can say no and keep learning with speaking exercises turned off."
+    },
+    {
+      "name": "Speech Recognition",
+      "why": "to turn what you say into text and check it. Recognition runs on your iPhone when your device supports it; otherwise Apple processes the audio (see above)."
+    },
+    {
+      "name": "Notifications",
+      "why": "to send the study reminder you choose and, if you start a free trial, a reminder before it ends. Nothing leaves your iPhone for this."
+    }
+  ],
+  "your_controls": [
+    "**Delete your learning data** in **Me → Settings → Delete learning data**, or by deleting the app — everything lives only on your iPhone.",
+    "**Turn microphone, speech recognition or notifications off or on** in iOS Settings → Firstalk.",
+    "**Manage or cancel your subscription** in iOS Settings → your name → Subscriptions."
+  ],
+  "subscription": {
+    "restore_location": "on the Firstalk Pro screen, or in Me → Settings"
+  },
+  "support_faq": [
+    {
+      "q": "The app does not hear me.",
+      "a": "Firstalk needs microphone and speech recognition access. Open iOS **Settings → Firstalk** and turn on **Microphone** and **Speech Recognition**. Speak close to your iPhone in a quiet place."
+    },
+    {
+      "q": "How do I change the explanation language?",
+      "a": "Open **Me → Settings → Explanation language**. The change applies right away."
+    },
+    {
+      "q": "Does Firstalk work offline?",
+      "a": "Yes. Lessons and their audio are built into the app. Speech checking may need an internet connection on iPhones that cannot recognize English on the device."
+    },
+    {
+      "q": "How do I delete my data?",
+      "a": "Use **Me → Settings → Delete learning data**, or delete the app. Your data lives only on your iPhone, so this removes it completely."
+    }
+  ]
+}
