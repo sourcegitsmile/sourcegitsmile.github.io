@@ -48,7 +48,7 @@
 <h2>Summary</h2>
 <div class="box"><ul>
   <li><strong>No ads, no tracking.</strong> We do not show third-party ads, do not collect your advertising identifier (IDFA), and do not track you across other companies&#x27; apps or websites.</li>
-  <li><strong>No account, no server of our own.</strong> Your learning progress, review schedule, streak, goals and settings are stored only on your iPhone. Firstalk has no account and no server of its own. Speech recognition runs on your iPhone when your device supports it; otherwise the audio of the sentence you say is sent to Apple to be turned into text, and the app never saves recordings. Anonymous usage events go to Google Analytics for Firebase so we can fix problems and improve lessons.</li>
+  <li><strong>No account, no server of our own.</strong> Your learning progress, review schedule, streak, goals and settings are stored only on your iPhone. Firstalk has no account and no server of its own. Speech recognition runs on your iPhone when your device supports it; otherwise the audio of the sentence you say is sent to Apple to be turned into text, and the app never saves recordings. Pseudonymous usage events go to Google Analytics for Firebase so we can fix problems and improve lessons: they are tied only to a random app-instance identifier, never to your name or an account, because Firstalk has no sign-in.</li>
   <li><strong>We never sell your data.</strong></li>
 </ul></div>
 
@@ -56,7 +56,7 @@
 <p>The table below lists everything that leaves your device.</p>
 <table><thead><tr><th>Data</th><th>Sent to</th><th>Why</th></tr></thead><tbody>
 <tr><td>The audio of the sentence you say in a speaking exercise, only when your iPhone cannot recognize English on the device</td><td>Apple Speech Recognition</td><td>Turn your speech into text so the app can check it</td></tr>
-<tr><td>Usage events and purchase events (never what you say or type), app-instance identifier, app and device info, locale, approximate region</td><td>Google Analytics for Firebase</td><td>Understand how the app is used, fix problems and improve lessons</td></tr>
+<tr><td>Usage events and purchase events (never what you say or type), a random app-instance identifier, basic diagnostic information (app version, device model, OS version), locale, and an approximate region derived from your IP address — not linked to your identity</td><td>Google Analytics for Firebase</td><td>Understand how the app is used, find problems and improve lessons</td></tr>
 <tr><td>Your purchase receipt</td><td>Apple (App Store purchases)</td><td>Confirm that your Firstalk Pro subscription is active</td></tr>
 </tbody></table>
 
@@ -72,8 +72,9 @@
   <li>Your name, email address or any account, because Firstalk has no sign-in.</li>
   <li>Voice recordings — the app never saves what you say.</li>
   <li>Your advertising identifier (IDFA); Firstalk does not track you across other companies&#x27; apps or websites.</li>
-  <li>Your location, contacts, photos or browsing history.</li>
+  <li>Your precise location. Google Analytics for Firebase sees only an approximate region derived from your IP address (see above); the app never asks for location access.</li>
   <li>Payment details — Firstalk Pro is bought through Apple, and we never see your card, Apple Account or name.</li>
+  <li>Your contacts, photos or browsing history.</li>
 </ul>
 
 <h2>3. Device permissions</h2>
@@ -89,15 +90,15 @@
 <ul>
   <li><strong>Apple Speech Recognition</strong> — Turns the English sentence you say in a speaking exercise into text so the app can check it. When your iPhone can recognize English on the device, the audio does not leave your iPhone. Otherwise Apple processes the audio on its servers. Receives: the audio of the sentence you say in a speaking exercise, only when on-device recognition is not available, handled by Apple. Their privacy policy: <a href="https://www.apple.com/legal/privacy/" rel="noopener">www.apple.com/legal/privacy</a></li>
   <li><strong>Apple (App Store purchases)</strong> — Processes the Firstalk Pro subscription and verifies that it is active. Receives: your purchase receipt, handled by Apple (we never see your payment details, Apple Account or name). Their privacy policy: <a href="https://www.apple.com/legal/privacy/" rel="noopener">www.apple.com/legal/privacy</a></li>
-  <li><strong>Google Analytics for Firebase</strong> — Measures how the app is used (for example whether a lesson was finished or the upgrade screen was opened) so we can fix problems and improve lessons. Never used for advertising or cross-app tracking. Receives: a small set of usage events and their settings (never what you say or type), an app-instance identifier, app version, device model, OS version, locale, approximate region derived from your IP address, and purchase events (product and result). Their privacy policy: <a href="https://firebase.google.com/support/privacy" rel="noopener">firebase.google.com/support/privacy</a></li>
+  <li><strong>Google Analytics for Firebase</strong> — Measures how the app is used (for example whether a lesson was finished or the upgrade screen was opened) and collects basic diagnostics so we can fix problems and improve lessons. This data is not linked to your identity — Firstalk has no account, so it is tied only to a random app-instance identifier. Never used for advertising or cross-app tracking. Firstalk does not use a separate crash-reporting service. Receives: a small set of usage events and their settings (never what you say or type), a random app-instance identifier, purchase events (product and result), basic diagnostic information such as app version, device model and OS version, locale, and an approximate region derived from your IP address (never your precise location). Their privacy policy: <a href="https://firebase.google.com/support/privacy" rel="noopener">firebase.google.com/support/privacy</a></li>
   <li><strong>Legal requirements</strong> — we may disclose information if required by law, or as part of a merger, acquisition or sale of assets.</li>
 </ul>
 
 <h2>5. How long we keep it</h2>
-<p>Data stored on your device stays there until you delete it or uninstall the app. We do not run our own servers and keep no copy of the content you submit. Analytics and crash data are kept for the provider's standard retention period.</p>
+<p>Data stored on your device stays there until you delete it or uninstall the app. We do not run our own servers and keep no copy of the content you submit. Analytics and diagnostic data are kept by Google Analytics for Firebase for its standard retention period and are not linked to your identity.</p>
 
 <h2>6. Legal bases</h2>
-<p> For analytics and crash diagnostics we rely on our legitimate interest in keeping the app working and improving it. For purchases, we rely on performing our contract with you.</p>
+<p> For analytics and diagnostics we rely on our legitimate interest in keeping the app working and improving it. For purchases, we rely on performing our contract with you.</p>
 
 <h2>7. Your choices and rights</h2>
 <p>Depending on where you live (for example under the GDPR or the CCPA), you may have the right to access, correct, delete or restrict the processing of your personal information. In the app you can:</p>

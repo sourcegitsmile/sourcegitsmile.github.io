@@ -300,8 +300,17 @@ def privacy(app):
     if app["ads"]:
         keep += " Advertising partners retain ad data only as described in their own policies."
     # analytics (tuỳ chọn, mặc định true): app không có SDK analytics/crash thì không nhắc tới.
+    # crash_reporting (tuỳ chọn, mặc định true): false khi app không có SDK crash riêng (chỉ
+    # diagnostics qua analytics); analytics_provider (tuỳ chọn) nêu tên bên giữ dữ liệu.
+    # Không khai hai key này thì câu giữ nguyên từng chữ như cũ.
+    crash = app.get("crash_reporting", True)
+    provider = app.get("analytics_provider")
     if app.get("analytics", True):
-        keep += " Analytics and crash data are kept for the provider's standard retention period."
+        kinds = "Analytics and crash data" if crash else "Analytics and diagnostic data"
+        if provider:
+            keep += f" {kinds} are kept by {e(provider)} for its standard retention period and are not linked to your identity."
+        else:
+            keep += f" {kinds} are kept for the provider's standard retention period."
     sections.append(f"""<h2>{n}. How long we keep it</h2>
 <p>{keep}</p>""")
     n += 1
@@ -315,7 +324,7 @@ def privacy(app):
     # spec "purchases": false (free app, no IAP) drops the contract basis for purchases
     purchases = "For purchases, we rely on performing our contract with you." if app.get("purchases", True) else ""
     if app.get("analytics", True):
-        basis = " ".join(bases) + " For analytics and crash diagnostics we rely on our legitimate interest in keeping the app working and improving it. " + purchases
+        basis = " ".join(bases) + " For analytics and " + ("crash diagnostics" if crash else "diagnostics") + " we rely on our legitimate interest in keeping the app working and improving it. " + purchases
     else:
         basis = " ".join(bases + ([purchases] if purchases else []))
     sections.append(f"""<h2>{n}. Legal bases</h2>
