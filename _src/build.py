@@ -324,7 +324,9 @@ def privacy(app):
     if app.get("analytics", True):
         kinds = "Analytics and crash data" if crash else "Analytics and diagnostic data"
         if provider:
-            keep += f" {kinds} are kept by {e(provider)} for its standard retention period and are not linked to your identity."
+            # app có tracking (ATT/IDFA) thì không được nói "not linked to your identity"
+            tail = "." if app["tracking"] else " and are not linked to your identity."
+            keep += f" {kinds} are kept by {e(provider)} for its standard retention period{tail}"
         else:
             keep += f" {kinds} are kept for the provider's standard retention period."
     sections.append(f"""<h2>{n}. How long we keep it</h2>

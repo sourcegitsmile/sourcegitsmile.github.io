@@ -5,13 +5,13 @@
   "tagline": "Learn English from zero with short lessons, listening and speaking practice explained in your own language — no account needed.",
   "app_store_id": "6835430951",
   "contact_email": "hoangdovan.bravo@gmail.com",
-  "last_updated": "2026-11-16",
+  "last_updated": "2026-11-17",
   "terms_url": "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
   "ads": false,
-  "tracking": false,
+  "tracking": true,
   "analytics": true,
   "purchases": true,
-  "storage_summary": "Your learning progress, review schedule, streak, goals and settings are stored only on your iPhone. Firstalk has no account and no server of its own. Speech recognition runs on your iPhone when your device supports it; otherwise the audio of the sentence you say is sent to Apple to be turned into text, and the app never saves recordings. Pseudonymous usage events go to Google Analytics for Firebase so we can fix problems and improve lessons: they are tied only to a random app-instance identifier, never to your name or an account, because Firstalk has no sign-in.",
+  "storage_summary": "Your learning progress, review schedule, streak, goals and settings are stored only on your iPhone. Firstalk has no account and no server of its own. Speech recognition runs on your iPhone when your device supports it; otherwise the audio of the sentence you say is sent to Apple to be turned into text, and the app never saves recordings. Usage events go to Google Analytics for Firebase so we can fix problems and improve lessons; only if you allow tracking, they are also used to measure our Google Ads campaigns.",
   "nothing_sent_detail": "What you say in speaking exercises is never sent to us or to Google Analytics, and no recording is ever saved.",
   "processors": {
     "apple_speech": {
@@ -28,8 +28,8 @@
     },
     "firebase": {
       "name": "Google Analytics for Firebase",
-      "purpose": "Measures how the app is used (for example whether a lesson was finished or the upgrade screen was opened) and collects basic diagnostics so we can fix problems and improve lessons. This data is not linked to your identity — Firstalk has no account, so it is tied only to a random app-instance identifier. Never used for advertising or cross-app tracking. Firstalk does not use a separate crash-reporting service.",
-      "data": "a small set of usage events and their settings (never what you say or type), a random app-instance identifier, purchase events (product and result), basic diagnostic information such as app version, device model and OS version, locale, and an approximate region derived from your IP address (never your precise location)",
+      "purpose": "Measures how the app is used (for example whether a lesson was finished or the upgrade screen was opened) and collects basic diagnostics so we can fix problems and improve lessons, and — only if you allow tracking — measures whether our Google Ads campaigns led to the app being installed or used, using Google's on-device conversion measurement. Firstalk has no account, so this data is never tied to your name or email. Firstalk does not use a separate crash-reporting service.",
+      "data": "a small set of usage events and their settings (never what you say or type), an app-instance identifier (a device ID that may be used for ad measurement if you allow tracking), purchase events (product and result), basic diagnostic information such as app version, device model and OS version, locale, and an approximate region derived from your IP address (never your precise location); if you allow tracking in the App Tracking Transparency prompt, your advertising identifier (IDFA)",
       "policy_url": "https://firebase.google.com/support/privacy"
     }
   },
@@ -40,9 +40,9 @@
       "why": "Turn your speech into text so the app can check it"
     },
     {
-      "what": "Usage events and purchase events (never what you say or type), a random app-instance identifier, basic diagnostic information (app version, device model, OS version), locale, and an approximate region derived from your IP address — not linked to your identity",
+      "what": "Usage events and purchase events (never what you say or type), an app-instance identifier, basic diagnostic information (app version, device model, OS version), locale, and an approximate region derived from your IP address; the advertising identifier (IDFA) only if you allow tracking",
       "to": "firebase",
-      "why": "Understand how the app is used, find problems and improve lessons"
+      "why": "Understand how the app is used, find problems, improve lessons and, only with your permission, measure our Google Ads campaigns"
     },
     {
       "what": "Your purchase receipt",
@@ -59,7 +59,6 @@
   "not_collected": [
     "Your name, email address or any account, because Firstalk has no sign-in.",
     "Voice recordings — the app never saves what you say.",
-    "Your advertising identifier (IDFA); Firstalk does not track you across other companies' apps or websites.",
     "Your precise location. Google Analytics for Firebase sees only an approximate region derived from your IP address (see above); the app never asks for location access.",
     "Payment details — Firstalk Pro is bought through Apple, and we never see your card, Apple Account or name.",
     "Your contacts, photos or browsing history."
@@ -81,7 +80,8 @@
   "your_controls": [
     "**Delete your learning data** in **Me → Settings → Delete learning data**, or by deleting the app — everything lives only on your iPhone.",
     "**Turn microphone, speech recognition or notifications off or on** in iOS Settings → Firstalk.",
-    "**Manage or cancel your subscription** in iOS Settings → your name → Subscriptions."
+    "**Manage or cancel your subscription** in iOS Settings → your name → Subscriptions.",
+    "**Allow or stop tracking** at any time in iOS Settings → Privacy & Security → Tracking → Firstalk."
   ],
   "subscription": {
     "restore_location": "on the Firstalk Pro screen, or in Me → Settings"
@@ -105,5 +105,6 @@
     }
   ],
   "analytics_provider": "Google Analytics for Firebase",
-  "crash_reporting": false
+  "crash_reporting": false,
+  "tracking_detail": "After you finish the welcome screens, iOS asks whether Firstalk may track you (App Tracking Transparency). We advertise Firstalk with Google Ads. Only if you tap **Allow**, Google Analytics for Firebase receives your device's advertising identifier (IDFA), and app installs, the start of a free trial and Firstalk Pro purchases (product and price) are shared with Google Ads so we can tell which of our ads brought new learners. Google also uses on-device conversion measurement, which matches an ad to an install on your iPhone without sending your name, email or phone number — Firstalk never collects these. If you tap **Ask App Not to Track**, no IDFA is collected; Apple's SKAdNetwork may still tell Google Ads that an ad led to an install, without identifying you or your device. You can change this any time in iOS Settings → Privacy & Security → Tracking. What you say in speaking exercises is never used for this."
 }
