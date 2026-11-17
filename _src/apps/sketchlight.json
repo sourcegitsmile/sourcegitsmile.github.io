@@ -5,13 +5,13 @@
   "tagline": "Turn a photo into lines and trace it on paper with your iPhone or iPad — draw someone you love and give it as a gift.",
   "app_store_id": "",
   "contact_email": "hoangdovan.bravo@gmail.com",
-  "last_updated": "2026-11-16",
+  "last_updated": "2026-11-17",
   "terms_url": "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
   "ads": false,
-  "tracking": false,
+  "tracking": true,
   "analytics": true,
   "purchases": true,
-  "storage_summary": "Your photos, sketches, projects, finished drawings, recordings and settings are stored only on your iPhone or iPad. Sketchlight has no account and no server of its own. Turning a photo into lines, finding the subject and finding your sheet of paper all run on your device, and the camera view never leaves it. Anonymous usage events go to Google Analytics for Firebase so we can fix problems and improve the app.",
+  "storage_summary": "Your photos, sketches, projects, finished drawings, recordings and settings are stored only on your iPhone or iPad. Sketchlight has no account and no server of its own. Turning a photo into lines, finding the subject and finding your sheet of paper all run on your device, and the camera view never leaves it. Usage events go to Google Analytics for Firebase so we can fix problems and improve the app; only if you allow tracking, they are also used to measure our Google Ads campaigns.",
   "nothing_sent_detail": "Your photos, the camera view, your drawings and anything you type are never sent to us or to Google Analytics.",
   "processors": {
     "apple_storekit": {
@@ -22,16 +22,16 @@
     },
     "firebase": {
       "name": "Google Analytics for Firebase",
-      "purpose": "Measures how the app is used (for example whether a tracing session was started or the upgrade screen was opened) so we can fix problems and improve the app. Never used for advertising or cross-app tracking.",
-      "data": "a small set of usage events and their settings (never your photos, drawings or anything you type), an app-instance identifier, app version, device model, OS version, locale, approximate region derived from your IP address, and purchase events (product and result)",
+      "purpose": "Measures how the app is used (for example whether a tracing session was started or the upgrade screen was opened) so we can fix problems and improve the app, and — only if you allow tracking — measures whether our Google Ads campaigns led to the app being installed or used, using Google's on-device measurement.",
+      "data": "a small set of usage events and their settings (never your photos, drawings or anything you type), an app-instance identifier, app version, device model, OS version, locale, approximate region derived from your IP address, and purchase events (product and result); if you allow tracking in the App Tracking Transparency prompt, your advertising identifier (IDFA)",
       "policy_url": "https://firebase.google.com/support/privacy"
     }
   },
   "data_sent": [
     {
-      "what": "Usage events and purchase events (never your photos, drawings or anything you type), app-instance identifier, app and device info, locale, approximate region",
+      "what": "Usage events and purchase events (never your photos, drawings or anything you type), app-instance identifier, app and device info, locale, approximate region; the advertising identifier (IDFA) only if you allow tracking",
       "to": "firebase",
-      "why": "Understand how the app is used, fix problems and improve the app"
+      "why": "Understand how the app is used, fix problems, improve the app and, only with your permission, measure our Google Ads campaigns"
     },
     {
       "what": "Your purchase receipt",
@@ -49,7 +49,6 @@
   "not_collected": [
     "Your name, email address or any account, because Sketchlight has no sign-in.",
     "Your photos, the camera view or your drawings — they never leave your device unless you share them yourself.",
-    "Your advertising identifier (IDFA); Sketchlight does not track you across other companies' apps or websites.",
     "Your location, contacts or browsing history.",
     "Payment details — Sketchlight Pro is bought through Apple, and we never see your card, Apple Account or name."
   ],
@@ -65,13 +64,18 @@
     {
       "name": "Notifications",
       "why": "to send the daily challenge reminder at the time you choose. Nothing leaves your device for this."
+    },
+    {
+      "name": "Tracking (App Tracking Transparency)",
+      "why": "asked once after onboarding. If you allow it, your advertising identifier (IDFA) is used only to measure whether our Google Ads campaigns brought you to Sketchlight. If you decline, nothing changes in the app and the IDFA is never read."
     }
   ],
   "your_controls": [
     "**Delete a project or a drawing** in **My Art**, or delete everything by deleting the app — your work lives only on your device.",
     "**Turn camera, photo saving or notifications off or on** in iOS Settings → Sketchlight.",
     "**Turn the daily reminder off** in **Settings → Daily challenge** in the app.",
-    "**Manage or cancel your subscription** in iOS Settings → your name → Subscriptions."
+    "**Manage or cancel your subscription** in iOS Settings → your name → Subscriptions.",
+    "**Allow or stop tracking** at any time in iOS Settings → Privacy & Security → Tracking → Sketchlight."
   ],
   "subscription": {
     "restore_location": "on the Sketchlight Pro screen, or in Settings"
@@ -97,5 +101,6 @@
       "q": "How do I delete my data?",
       "a": "Delete projects and drawings in **My Art**, or delete the app. Your work lives only on your device, so this removes it completely."
     }
-  ]
+  ],
+  "tracking_detail": "After you finish the welcome screens, iOS asks whether Sketchlight may track you (App Tracking Transparency). We advertise Sketchlight with Google Ads. Only if you tap **Allow**, Google Analytics for Firebase receives your device's advertising identifier (IDFA), and app installs, the start of a free trial and Sketchlight Pro purchases (product and price) are shared with Google Ads so we can tell which of our ads brought new users. Google also uses on-device conversion measurement, which matches an ad to an install on your iPhone or iPad without sending your name, email or phone number. If you tap **Ask App Not to Track**, no IDFA is collected; Apple's SKAdNetwork may still tell Google Ads that an ad led to an install, without identifying you or your device. You can change this any time in iOS Settings → Privacy & Security → Tracking. Your photos, the camera view and your drawings are never used for this."
 }
