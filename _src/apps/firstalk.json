@@ -31,6 +31,18 @@
       "purpose": "Measures how the app is used (for example whether a lesson was finished or the upgrade screen was opened) and collects basic diagnostics so we can fix problems and improve lessons, and — only if you allow tracking — measures whether our Google Ads campaigns led to the app being installed or used, using Google's on-device conversion measurement. Firstalk has no account, so this data is never tied to your name or email. Firstalk does not use a separate crash-reporting service.",
       "data": "a small set of usage events and their settings (never what you say or type), an app-instance identifier (a device ID that may be used for ad measurement if you allow tracking), purchase events (product and result), basic diagnostic information such as app version, device model and OS version, locale, and an approximate region derived from your IP address (never your precise location); if you allow tracking in the App Tracking Transparency prompt, your advertising identifier (IDFA)",
       "policy_url": "https://firebase.google.com/support/privacy"
+    },
+    "apple_ads": {
+      "name": "Apple Ads (Search Ads attribution)",
+      "purpose": "Tells us whether Firstalk was installed after you tapped one of our ads in Apple Search Ads, so we can see which campaigns and keywords bring new learners. Apple's AdServices framework creates a one-time attribution token on your iPhone; it contains no name, email, advertising identifier or other personal details and works whether or not you allow tracking.",
+      "data": "a one-time AdServices attribution token, from which Apple returns only campaign information (such as campaign, ad group and keyword) and whether an ad led to the install",
+      "policy_url": "https://www.apple.com/legal/privacy/"
+    },
+    "adattributionkit": {
+      "name": "Apple AdAttributionKit (ad network attribution)",
+      "purpose": "Lets ad networks we advertise with, such as Google Ads, learn that one of their ads led to an install or a purchase. Apple sends these reports to the ad network itself, with a delay and in aggregated form, without any user or device identifier; it works whether or not you allow tracking.",
+      "data": "an anonymous, delayed attribution report created by Apple (which ad network and campaign, and a coarse conversion value such as whether a trial or purchase happened) — never your identity or device identifiers",
+      "policy_url": "https://www.apple.com/legal/privacy/"
     }
   },
   "data_sent": [
@@ -43,6 +55,16 @@
       "what": "Usage events and purchase events (never what you say or type), an app-instance identifier, basic diagnostic information (app version, device model, OS version), locale, and an approximate region derived from your IP address; the advertising identifier (IDFA) only if you allow tracking",
       "to": "firebase",
       "why": "Understand how the app is used, find problems, improve lessons and, only with your permission, measure our Google Ads campaigns"
+    },
+    {
+      "what": "A one-time Apple Ads attribution token (no personal details or device identifiers)",
+      "to": "apple_ads",
+      "why": "Learn whether you installed Firstalk from one of our Apple Search Ads campaigns"
+    },
+    {
+      "what": "An anonymous, delayed install or purchase report created by Apple (no user or device identifier)",
+      "to": "adattributionkit",
+      "why": "Let ad networks such as Google Ads know that an ad led to an install"
     },
     {
       "what": "Your purchase receipt",
@@ -106,5 +128,5 @@
   ],
   "analytics_provider": "Google Analytics for Firebase",
   "crash_reporting": false,
-  "tracking_detail": "After you finish the welcome screens, iOS asks whether Firstalk may track you (App Tracking Transparency). We advertise Firstalk with Google Ads. Only if you tap **Allow**, Google Analytics for Firebase receives your device's advertising identifier (IDFA), and app installs, the start of a free trial and Firstalk Pro purchases (product and price) are shared with Google Ads so we can tell which of our ads brought new learners. Google also uses on-device conversion measurement, which matches an ad to an install on your iPhone without sending your name, email or phone number — Firstalk never collects these. If you tap **Ask App Not to Track**, no IDFA is collected; Apple's SKAdNetwork may still tell Google Ads that an ad led to an install, without identifying you or your device. You can change this any time in iOS Settings → Privacy & Security → Tracking. What you say in speaking exercises is never used for this."
+  "tracking_detail": "After you finish the welcome screens, iOS asks whether Firstalk may track you (App Tracking Transparency). We advertise Firstalk with Google Ads. Only if you tap **Allow**, Google Analytics for Firebase receives your device's advertising identifier (IDFA), and app installs, the start of a free trial and Firstalk Pro purchases (product and price) are shared with Google Ads so we can tell which of our ads brought new learners. Google also uses on-device conversion measurement, which matches an ad to an install on your iPhone without sending your name, email or phone number — Firstalk never collects these. If you tap **Ask App Not to Track**, no IDFA is collected; Apple's AdAttributionKit and Apple Ads attribution may still tell us or the ad network that an ad led to an install, without identifying you or your device (see above). You can change this any time in iOS Settings → Privacy & Security → Tracking. What you say in speaking exercises is never used for this."
 }
