@@ -10,9 +10,9 @@
   "last_updated": "2026-11-17",
   "ads": false,
   "tracking": false,
-  "analytics": false,
+  "analytics": true,
   "purchases": true,
-  "storage_summary": "Your notebooks, pages, drawings, photos and settings are stored only on your device. Sprig has no account, no server of its own and no analytics, and it does not use the internet.",
+  "storage_summary": "Your notebooks, pages, drawings, photos and settings are stored only on your device. Sprig has no account and no server of its own. Pseudonymous usage events go to Google Analytics for Firebase so we can fix problems and improve the app: they are tied only to a random app-instance identifier, never to your name or an account, because Sprig has no sign-in. Your notes, drawings and photos are never sent.",
   "nothing_sent_detail": "",
   "processors": {
     "google_play_billing": {
@@ -20,9 +20,20 @@
       "purpose": "Processes the Sprig Premium subscription and tells the app whether it is active.",
       "data": "your purchase record, handled by Google (we never see your payment details, Google Account or name)",
       "policy_url": "https://policies.google.com/privacy"
+    },
+    "firebase": {
+      "name": "Google Analytics for Firebase",
+      "purpose": "Measures how the app is used (for example whether onboarding was finished or the Premium screen was opened) and collects basic diagnostics so we can fix problems and improve the app. This data is not linked to your identity — Sprig has no account, so it is tied only to a random app-instance identifier. Never used for advertising or cross-app tracking; Sprig does not collect your Android advertising ID. Sprig does not use a separate crash-reporting service.",
+      "data": "a small set of usage events (never the content of your notes, drawings or photos), a random app-instance identifier, purchase events (product and result), basic diagnostic information such as app version, device model and OS version, locale, and an approximate region derived from your IP address (never your precise location)",
+      "policy_url": "https://firebase.google.com/support/privacy"
     }
   },
   "data_sent": [
+    {
+      "what": "Usage events and purchase events (never the content of your notes, drawings or photos), a random app-instance identifier, basic diagnostic information (app version, device model, OS version), locale, and an approximate region derived from your IP address — not linked to your identity",
+      "to": "firebase",
+      "why": "Understand how the app is used, find problems and improve the app"
+    },
     {
       "what": "Your purchase, only if you subscribe to Sprig Premium",
       "to": "google_play_billing",
@@ -37,9 +48,10 @@
   ],
   "not_collected": [
     "Your name, email address or any account, because Sprig has no sign-in.",
-    "Your notes, drawings and photos.",
-    "Your location, contacts or browsing history.",
-    "Usage analytics, crash reports or your Android advertising ID.",
+    "Your notes, drawings and photos — they never leave your device.",
+    "Your Android advertising ID; Sprig does not track you across other companies' apps or websites.",
+    "Your precise location. Google Analytics for Firebase sees only an approximate region derived from your IP address (see above); the app never asks for location access.",
+    "Your contacts or browsing history.",
     "Payment details — Premium is bought through Google Play, and we never see your card, Google Account or name."
   ],
   "permissions": [
@@ -89,5 +101,7 @@
       "q": "What does Premium add?",
       "a": "The free version includes one notebook plus Quick Notes. **Sprig Premium** unlocks unlimited notebooks, every premium cover, paper and font, and whole-notebook PDF export. It is an auto-renewing weekly or yearly subscription. The weekly plan starts with a 3-day free trial; cancel at least 24 hours before the trial ends to avoid being charged."
     }
-  ]
+  ],
+  "analytics_provider": "Google Analytics for Firebase",
+  "crash_reporting": false
 }
