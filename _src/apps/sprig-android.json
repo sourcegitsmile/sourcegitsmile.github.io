@@ -1,0 +1,93 @@
+{
+  "slug": "sprig-android",
+  "platform": "android",
+  "package": "com.sprig.notes",
+  "name": "Sprig: Notes & Sketchbook",
+  "device_name": "Sprig",
+  "developer": "Fire AI App",
+  "tagline": "Type, sketch and keep notes in beautiful notebooks on your Android phone — everything stays on your device, no account needed.",
+  "contact_email": "firehk.app@gmail.com",
+  "last_updated": "2026-11-17",
+  "ads": false,
+  "tracking": false,
+  "analytics": false,
+  "purchases": true,
+  "storage_summary": "Your notebooks, pages, drawings, photos and settings are stored only on your device. Sprig has no account, no server of its own and no analytics, and it does not use the internet.",
+  "nothing_sent_detail": "",
+  "processors": {
+    "google_play_billing": {
+      "name": "Google Play (in-app purchases)",
+      "purpose": "Processes the Sprig Premium subscription and tells the app whether it is active.",
+      "data": "your purchase record, handled by Google (we never see your payment details, Google Account or name)",
+      "policy_url": "https://policies.google.com/privacy"
+    }
+  },
+  "data_sent": [
+    {
+      "what": "Your purchase, only if you subscribe to Sprig Premium",
+      "to": "google_play_billing",
+      "why": "Process the subscription and confirm that it is active"
+    }
+  ],
+  "stored_on_device": [
+    "Your notebooks, pages, typed text, drawings, checklists, tags and the photos you add to a page.",
+    "Reminders you set on a note, and your settings such as sort order and appearance.",
+    "Deleted notebooks and pages stay in Recently Deleted for 30 days, then are removed.",
+    "If Android backup is turned on for your Google Account, Android may include the app's data in your device backup. That backup is made and stored by Google under your account; we cannot see it."
+  ],
+  "not_collected": [
+    "Your name, email address or any account, because Sprig has no sign-in.",
+    "Your notes, drawings and photos.",
+    "Your location, contacts or browsing history.",
+    "Usage analytics, crash reports or your Android advertising ID.",
+    "Payment details — Premium is bought through Google Play, and we never see your card, Google Account or name."
+  ],
+  "permissions": [
+    {
+      "name": "Notifications",
+      "why": "to show a reminder you set on a note. Asked only when you first set a reminder; you can say no and still use every other feature."
+    },
+    {
+      "name": "Alarms & reminders",
+      "why": "to deliver a note reminder at the time you chose, including after the phone restarts."
+    },
+    {
+      "name": "Photos",
+      "why": "to add a picture to a page. Sprig uses the Android photo picker, so it only receives the photo you pick and never your whole library."
+    }
+  ],
+  "your_controls": [
+    "**Delete a note or notebook** from its ••• menu; it moves to Recently Deleted (Settings → Recently Deleted), where you can delete it for good.",
+    "**Turn notifications off or on** in Android Settings → Apps → Sprig → Notifications.",
+    "**Delete all your data** by uninstalling the app or clearing its storage in Android Settings → Apps → Sprig → Storage — everything lives only on your device."
+  ],
+  "subscription": {
+    "restore_location": "on the Sprig Premium screen"
+  },
+  "support_faq": [
+    {
+      "q": "Where are my notes stored?",
+      "a": "On your device, inside the app. Sprig has no account and no cloud sync."
+    },
+    {
+      "q": "My reminder arrived a few minutes late.",
+      "a": "Android may delay reminders to save battery. To get them on time, open Android **Settings → Apps → Sprig** and allow **Alarms & reminders**, and turn off battery optimization for Sprig."
+    },
+    {
+      "q": "I don't get reminder notifications.",
+      "a": "Open Android **Settings → Apps → Sprig → Notifications** and turn notifications on."
+    },
+    {
+      "q": "I deleted a note by mistake.",
+      "a": "Open **Settings → Recently Deleted** and tap **Restore**. Deleted notes are kept there for 30 days."
+    },
+    {
+      "q": "How do I share or save a page?",
+      "a": "Open the page and tap the **share** icon (Export & Share) to save or share it as a PDF, an image or plain text. In the Notes list you can also use a note's **•••** menu → **Export**."
+    },
+    {
+      "q": "What does Premium add?",
+      "a": "The free version includes one notebook plus Quick Notes. **Sprig Premium** unlocks unlimited notebooks, every premium cover, paper and font, and whole-notebook PDF export. It is an auto-renewing weekly or yearly subscription that starts with a 3-day free trial. Cancel at least 24 hours before the trial ends to avoid being charged."
+    }
+  ]
+}

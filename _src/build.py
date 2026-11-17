@@ -26,9 +26,17 @@ SITE = "https://sourcegitsmile.github.io"
 DEVELOPER = "Smile Show Technology Limited"   # default; must match the App Store Connect seller. Per-app override: "developer" in the app json
 STUDIO = ""
 APPLE_CANCEL_URL = "https://support.apple.com/en-us/118428"
+PLAY_CANCEL_URL = "https://support.google.com/googleplay/answer/7018481"
+PLAY_REFUND_URL = "https://support.google.com/googleplay/answer/2479637"
+
+
+def is_android(app):
+    """platform: "android" (tuỳ chọn) — trang cho bản Google Play: Android Settings, Google Play Billing, advertising ID."""
+    return app.get("platform") == "android"
+
 
 # device_name (tuỳ chọn): tên app hiện dưới icon / trong iOS Settings, nếu khác tên store.
-REQUIRED = ["slug", "name", "tagline", "app_store_id", "contact_email",
+REQUIRED = ["slug", "name", "tagline", "contact_email",
             "last_updated", "processors", "data_sent", "stored_on_device",
             "not_collected", "permissions", "tracking", "ads", "your_controls"]
 
@@ -44,6 +52,10 @@ def validate(app, src):
     for k in REQUIRED:
         if k not in app:
             errs.append(f"thiếu trường bắt buộc '{k}'")
+    if not is_android(app) and "app_store_id" not in app:
+        errs.append("thiếu trường bắt buộc 'app_store_id'")
+    if is_android(app) and not app.get("package"):
+        errs.append("platform android cần 'package' (application id trên Google Play)")
     if errs:
         raise SpecError(f"{src.name}: " + "; ".join(errs))
 
@@ -129,7 +141,8 @@ def urls(app):
     return {
         "privacy": f"{base}/privacy/",
         "support": f"{base}/support/",
-        "store": f"https://apps.apple.com/app/id{app['app_store_id']}",
+        "store": (f"https://play.google.com/store/apps/details?id={app['package']}" if is_android(app)
+                  else f"https://apps.apple.com/app/id{app['app_store_id']}"),
         "home": f"{SITE}/",
     }
 
@@ -177,7 +190,9 @@ def page(title, body, app):
     links = [f'<a href="{u["privacy"]}">Privacy Policy</a>', f'<a href="{u["support"]}">Support</a>']
     if app.get("terms_url"):
         links.append(f'<a href="{e(app["terms_url"])}">Terms of Use</a>')
-    if app["app_store_id"]:
+    if is_android(app) and app.get("store_live"):
+        links.append(f'<a href="{u["store"]}">Google Play</a>')
+    elif not is_android(app) and app["app_store_id"]:
         links.append(f'<a href="{u["store"]}">App Store</a>')
     links.append(f'<a href="{u["home"]}">Developer</a>')
     footer = "\n".join(f"    {link}" for link in links)
@@ -214,7 +229,8 @@ def privacy(app):
     # tóm tắt
     summary = []
     if not app["ads"] and not app["tracking"]:
-        summary.append("**No ads, no tracking.** We do not show third-party ads, do not collect your advertising identifier (IDFA), and do not track you across other companies' apps or websites.")
+        idfa = "Android advertising ID" if is_android(app) else "advertising identifier (IDFA)"
+        summary.append(f"**No ads, no tracking.** We do not show third-party ads, do not collect your {idfa}, and do not track you across other companies' apps or websites.")
     elif app["tracking"]:
         summary.append(f"**Tracking.** {app['tracking_detail']}")
     if consent:
@@ -254,7 +270,7 @@ def privacy(app):
     # 3. quyền hệ thống
     perms = [f"**{p['name']}** — {p['why']}" for p in app["permissions"]]
     sections.append(f"""<h2>3. Device permissions</h2>
-<p>{name} asks for a permission only when you use the feature that needs it. You can decline, and you can change your choice at any time in iOS Settings.</p>
+<p>{name} asks for a permission only when you use the feature that needs it. You can decline, and you can change your choice at any time in {"Android Settings" if is_android(app) else "iOS Settings"}.</p>
 {ul(perms)}""")
 
     # 4. Health
@@ -342,7 +358,8 @@ def privacy(app):
     if app["tracking"]:
         trk = f"<p>{rich(app['tracking_detail'])}</p>"
     else:
-        trk = "<p>We do <strong>not</strong> track you across other companies' apps or websites. We do not access your advertising identifier (IDFA), so the app never shows the App Tracking Transparency prompt.</p>"
+        trk = ("<p>We do <strong>not</strong> track you across other companies' apps or websites, and the app does not access your Android advertising ID.</p>" if is_android(app)
+               else "<p>We do <strong>not</strong> track you across other companies' apps or websites. We do not access your advertising identifier (IDFA), so the app never shows the App Tracking Transparency prompt.</p>")
     sections.append(f"<h2>{n}. Tracking</h2>\n{trk}")
     n += 1
 
@@ -368,7 +385,16 @@ def support(app):
     u = urls(app)
     faq = list(app.get("support_faq", []))
     sub = app.get("subscription")
-    if sub:
+    if sub and is_android(app):
+        faq[:0] = [
+            {"q": "I paid but the app still shows the upgrade screen.",
+             "a": f"Tap **Restore Purchases** ({sub['restore_location']}). Make sure you are signed in to Google Play with the same Google Account you used to buy."},
+            {"q": "How do I cancel my subscription?",
+             "a": f"Subscriptions are billed by Google Play, so you cancel them in Google Play, not in the app: open the **Play Store** app, tap your profile picture, then **Payments & subscriptions → Subscriptions**. See [Google's instructions]({PLAY_CANCEL_URL})."},
+            {"q": "How do I get a refund?",
+             "a": f"Refunds are handled by Google Play. See [Google Play's refund policy]({PLAY_REFUND_URL})."},
+        ]
+    elif sub:
         faq[:0] = [
             {"q": "I paid but the app still shows the upgrade screen.",
              "a": f"Tap **Restore Purchases** ({sub['restore_location']}). Make sure you are signed in with the same Apple Account you used to buy."},
@@ -384,7 +410,7 @@ def support(app):
   <p class="sub">{name} — {e(app['tagline'])}</p>
   <div class="box contact">
     <a href="mailto:{mail}">{mail}</a>
-    <p>Email us with any question, bug report or refund enquiry. We aim to reply within 2 business days. Including your device model and iOS version helps us answer faster.</p>
+    <p>Email us with any question, bug report or refund enquiry. We aim to reply within 2 business days. Including your device model and {"Android" if is_android(app) else "iOS"} version helps us answer faster.</p>
   </div>
   <h2>Frequently asked questions</h2>
   <dl>
