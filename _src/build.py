@@ -239,7 +239,8 @@ def privacy(app):
         summary.append(f"**AI features.** Content you choose to submit is sent to {who} for processing — only after you agree on the in-app “{consent['screen_name']}” screen.")
     if health:
         summary.append("**Apple Health.** Health data stays on your device and is never sent to our AI providers, our servers, or any third party." if health.get("never_shared") else "**Apple Health.** See section 4.")
-    summary.append("**No account, no server of our own.** " + app.get("storage_summary", "Your app data is stored on your device."))
+    # summary_heading (tuỳ chọn): đổi tiêu đề khi app CÓ server riêng (ví dụ proxy AI).
+    summary.append(f"**{app.get('summary_heading', 'No account, no server of our own.')}** " + app.get("storage_summary", "Your app data is stored on your device."))
     summary.append("**We never sell your data.**")
     sections.append(f'<h2>Summary</h2>\n<div class="box">{ul(summary)}</div>')
 
@@ -310,7 +311,8 @@ def privacy(app):
     # retention
     # App không có AI thì không được nhắc "AI providers"; app có quảng cáo phải nói đối tác
     # quảng cáo giữ dữ liệu theo chính sách của họ. App có AI giữ nguyên câu cũ từng chữ.
-    keep = "Data stored on your device stays there until you delete it or uninstall the app. We do not run our own servers and keep no copy of the content you submit."
+    # retention_note (tuỳ chọn): thay câu mặc định khi app có server riêng.
+    keep = app.get("retention_note", "Data stored on your device stays there until you delete it or uninstall the app. We do not run our own servers and keep no copy of the content you submit.")
     if consent:
         keep += " AI providers process requests to return a result to you and retain request data only as described in their own policies."
     if app["ads"]:

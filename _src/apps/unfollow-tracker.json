@@ -1,0 +1,121 @@
+{
+  "slug": "unfollow-tracker",
+  "platform": "android",
+  "package": "com.bravo.unfollowtracker",
+  "name": "Unfollow Tracker: Followers",
+  "device_name": "Unfollow Tracker",
+  "developer": "Fire AI App",
+  "tagline": "See who unfollowed you, who doesn't follow you back and how your Instagram audience changes, with your follower lists kept on your Android phone.",
+  "contact_email": "firehk.app@gmail.com",
+  "last_updated": "2026-11-19",
+  "ads": false,
+  "tracking": false,
+  "analytics": true,
+  "purchases": true,
+  "storage_summary": "You sign in on Instagram's own login page inside the app. Your Instagram session, follower and following lists, and the history the app builds from them are stored only on your device; the app talks to Instagram directly from your phone and never sends these lists to us or anyone else. Two things leave your device: pseudonymous usage events to Google Analytics for Firebase, and — only if you use the AI Caption Writer or AI Hashtag Generator and agree first — the description you type and the photo you add, which go through our AI service to Anthropic.",
+  "nothing_sent_detail": "",
+  "processors": {
+    "anthropic": {
+      "name": "Anthropic (Claude AI), through our AI service",
+      "purpose": "Writes the captions and hashtags you ask for. Requests pass through our own server, which holds the Anthropic access key and forwards the request; it does not store your photo or text.",
+      "data": "the description you type and the photo you add (resized, with location data removed), plus a random app identifier, the app version and a push-notification token used to protect the service from abuse",
+      "policy_url": "https://www.anthropic.com/legal/privacy",
+      "requires_consent": true
+    },
+    "google_play_billing": {
+      "name": "Google Play (in-app purchases)",
+      "purpose": "Processes the Pro subscription and tells the app whether it is active.",
+      "data": "your purchase record, handled by Google (we never see your payment details, Google Account or name)",
+      "policy_url": "https://policies.google.com/privacy"
+    },
+    "firebase": {
+      "name": "Google Firebase (Analytics, Cloud Messaging, Remote Config)",
+      "purpose": "Measures how the app is used and collects basic diagnostics so we can fix problems, delivers notifications, and supplies app settings. This data is not linked to your identity or your Instagram account. Never used for advertising or cross-app tracking; the app does not collect your Android advertising ID.",
+      "data": "a small set of usage events (never your follower lists, captions or photos), a random app-instance identifier, a push-notification token, purchase events (product and result), basic diagnostic information such as app version, device model and OS version, locale, and an approximate region derived from your IP address (never your precise location)",
+      "policy_url": "https://firebase.google.com/support/privacy"
+    }
+  },
+  "data_sent": [
+    {
+      "what": "The description you type and the photo you add in the AI Caption Writer or AI Hashtag Generator (photos are resized and location data removed first), with a random app identifier, the app version and a push-notification token",
+      "to": "anthropic",
+      "why": "Write the captions or hashtags you asked for",
+      "user_content": true
+    },
+    {
+      "what": "Usage events and purchase events (never your follower lists, captions or photos), a random app-instance identifier, a push-notification token, basic diagnostic information (app version, device model, OS version), locale, and an approximate region derived from your IP address — not linked to your identity",
+      "to": "firebase",
+      "why": "Understand how the app is used, find problems, deliver notifications and improve the app"
+    },
+    {
+      "what": "Your purchase, only if you subscribe to Pro",
+      "to": "google_play_billing",
+      "why": "Process the subscription and confirm that it is active"
+    }
+  ],
+  "stored_on_device": [
+    "Your Instagram session from signing in on Instagram's own login page. The app never sees or stores your Instagram password.",
+    "Your follower and following lists, and the history the app builds from them (new followers, unfollowers, who doesn't follow you back).",
+    "Captions and hashtags generated during the current session.",
+    "Your settings, including whether you allowed the AI features.",
+    "Photos or videos you choose to save from Instagram, which go to your device's gallery."
+  ],
+  "not_collected": [
+    "Your Instagram password — you sign in on Instagram's own page.",
+    "Your follower and following lists or anything else from your Instagram account — they stay on your device.",
+    "Your Android advertising ID; the app does not track you across other companies' apps or websites.",
+    "Your precise location. The app never asks for location access, and location data is removed from photos before they are sent to the AI.",
+    "Your contacts or browsing history.",
+    "Payment details — Pro is bought through Google Play, and we never see your card, Google Account or name."
+  ],
+  "permissions": [
+    {
+      "name": "Notifications",
+      "why": "to send you app notifications. You can say no and still use every feature."
+    },
+    {
+      "name": "Photos",
+      "why": "to pick a photo for the AI Caption Writer or AI Hashtag Generator. The app uses the Android photo picker, so it only receives the photo you pick and never your whole library."
+    }
+  ],
+  "ai_consent": {
+    "screen_name": "Use AI with Anthropic?",
+    "decline_label": "Not now",
+    "withdraw": "Turn the AI features off any time in **Settings → AI Data Sharing**. Nothing is sent to the AI until you allow it again."
+  },
+  "your_controls": [
+    "**Turn the AI features off** in Settings → AI Data Sharing.",
+    "**Log out of Instagram** in Settings; this removes your Instagram session and data from the app.",
+    "**Delete all your data** in Settings → Delete My Data, or by uninstalling the app or clearing its storage in Android Settings → Apps → Unfollow Tracker → Storage.",
+    "**Turn notifications off or on** in Android Settings → Apps → Unfollow Tracker → Notifications."
+  ],
+  "subscription": {
+    "restore_location": "in Settings (Restore Purchases) and on the Pro screen"
+  },
+  "support_faq": [
+    {
+      "q": "Is this an official Instagram app?",
+      "a": "No. Unfollow Tracker is an independent app and is not affiliated with, endorsed by or sponsored by Instagram or Meta."
+    },
+    {
+      "q": "Does the app see my Instagram password?",
+      "a": "No. You sign in on Instagram's own login page inside the app. The app keeps only the session Instagram gives it, on your device."
+    },
+    {
+      "q": "Where are my follower lists stored?",
+      "a": "Only on your device. The app talks to Instagram directly from your phone and never uploads your lists."
+    },
+    {
+      "q": "The numbers look out of date.",
+      "a": "Pull down to refresh. Instagram limits how often lists can be loaded, so very large accounts may take a while."
+    },
+    {
+      "q": "How do I turn off the AI features?",
+      "a": "Open **Settings → AI Data Sharing**. Nothing is sent to the AI until you allow it again."
+    }
+  ],
+  "analytics_provider": "Google Analytics for Firebase",
+  "crash_reporting": false,
+  "summary_heading": "No account; one small server for AI only.",
+  "retention_note": "Data stored on your device stays there until you delete it or uninstall the app. Our only server is the AI service that forwards caption and hashtag requests to Anthropic; it does not store the text or photo you submit."
+}
