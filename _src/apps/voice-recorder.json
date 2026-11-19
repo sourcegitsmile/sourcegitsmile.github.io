@@ -1,18 +1,18 @@
 {
   "slug": "voice-recorder",
-  "name": "Voice Recorder: AI Memo, Notes",
-  "device_name": "Voice Recorder",
-  "tagline": "Record, edit and transcribe voice memos on your iPhone or iPad — recordings, transcripts and summaries stay on your device, no account needed.",
+  "name": "Askmemo: Ask Your Recordings",
+  "device_name": "Askmemo",
+  "tagline": "Record, transcribe and ask questions about your voice recordings on your iPhone or iPad — answers are written on your device, and your recordings, transcripts and summaries stay there, no account needed.",
   "app_store_id": "",
   "contact_email": "hoangdovan.bravo@gmail.com",
-  "last_updated": "2026-11-16",
+  "last_updated": "2026-11-20",
   "terms_url": "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
   "ads": false,
   "tracking": true,
   "analytics": true,
   "purchases": true,
-  "storage_summary": "Your recordings, transcripts, summaries, folders and settings are stored only on your iPhone or iPad. Voice Recorder has no account and no server of its own. Transcription uses Apple Speech Recognition: when your device cannot recognize the selected language on the device, the audio of that recording is sent to Apple for recognition under Apple's privacy policy. Anonymous usage events go to Google Analytics for Firebase so we can improve the app and measure our ads.",
-  "nothing_sent_detail": "Your recordings, transcripts and summaries are never sent to us, to Google Analytics or to any online AI service.",
+  "storage_summary": "Your recordings, transcripts, summaries, folders and settings are stored only on your iPhone or iPad. When you ask a question about your recordings, the search and the answer both run on your device. Askmemo has no account and no server of its own. Transcription uses Apple Speech Recognition: when your device cannot recognize the selected language on the device, the audio of that recording is sent to Apple for recognition under Apple's privacy policy. Anonymous usage events go to Google Analytics for Firebase so we can improve the app and measure our ads.",
+  "nothing_sent_detail": "Your recordings, transcripts, summaries and the questions you ask are never sent to us, to Google Analytics or to any online AI service.",
   "processors": {
     "apple_speech": {
       "name": "Apple Speech Recognition",
@@ -28,7 +28,7 @@
     },
     "google_analytics": {
       "name": "Google Analytics for Firebase",
-      "purpose": "Measures how the app is used (for example whether a recording was saved, a tool was used or the upgrade screen was opened) so we can fix problems and improve Voice Recorder, and — only if you allow tracking — shares installs and purchases with Google Ads so we can tell which of our ads brought new users and subscribers.",
+      "purpose": "Measures how the app is used (for example whether a recording was saved, a tool was used or the upgrade screen was opened) so we can fix problems and improve Askmemo, and — only if you allow tracking — shares installs and purchases with Google Ads so we can tell which of our ads brought new users and subscribers.",
       "data": "usage events (never your recordings, transcripts, summaries, file names or anything you type), an app-instance identifier, purchase events, app version, device model, OS version, locale, approximate region derived from your IP address, diagnostic data, and your advertising identifier (IDFA) only if you allow tracking",
       "policy_url": "https://firebase.google.com/support/privacy"
     }
@@ -51,14 +51,15 @@
     }
   ],
   "stored_on_device": [
-    "Your recordings and their names, markers, folders and favorites. You can also see the audio files in the Files app under On My iPhone (or On My iPad) › Voice Recorder.",
+    "Your recordings and their names, markers, folders and favorites. You can also see the audio files in the Files app under On My iPhone (or On My iPad) › Askmemo.",
     "Transcripts and summaries. Summaries are created on your device: with Apple's on-device AI model on devices with Apple Intelligence (iOS 26 or later), or with a simple built-in method that picks key sentences on other devices.",
+    "Questions you ask with Ask and their answers. Ask searches the transcripts of your recordings on your device; on devices with Apple Intelligence (iOS 26 or later), Apple's on-device AI model writes the answer with links to the moments it used, and on other devices the app shows the closest moments instead. Questions and answers are not saved after you leave the Ask screen.",
     "Your settings, such as recording quality and appearance.",
     "Deleted recordings stay in Recently Deleted for 30 days, then are removed. Delete everything at any time by deleting the app."
   ],
   "not_collected": [
-    "Your name, email address or any account, because Voice Recorder has no sign-in.",
-    "Your recordings, transcripts and summaries, and the names you give them.",
+    "Your name, email address or any account, because Askmemo has no sign-in.",
+    "Your recordings, transcripts, summaries, the questions you ask, and the names you give your recordings.",
     "Your location, contacts, photos or browsing history.",
     "Payment details — Premium is bought through Apple, and we never see your card, Apple Account or name."
   ],
@@ -73,13 +74,13 @@
     },
     {
       "name": "Tracking (App Tracking Transparency)",
-      "why": "to measure which of our ads brought you to Voice Recorder. Asked once when you first open the app; the app works the same whether you allow it or not."
+      "why": "to measure which of our ads brought you to Askmemo. Asked once when you first open the app; the app works the same whether you allow it or not."
     }
   ],
   "your_controls": [
     "**Delete any recording** from the list (swipe left or the ••• menu); it moves to Recently Deleted, where you can delete it for good.",
-    "**Turn tracking off or on** in iOS Settings → Privacy & Security → Tracking → Voice Recorder.",
-    "**Turn microphone or speech recognition access off or on** in iOS Settings → Voice Recorder.",
+    "**Turn tracking off or on** in iOS Settings → Privacy & Security → Tracking → Askmemo.",
+    "**Turn microphone or speech recognition access off or on** in iOS Settings → Askmemo.",
     "**Delete all your data** by deleting the app — everything lives only on your iPhone or iPad."
   ],
   "subscription": {
@@ -88,7 +89,7 @@
   "support_faq": [
     {
       "q": "The app can't record.",
-      "a": "Voice Recorder needs microphone access. Open iOS **Settings → Voice Recorder** and turn on **Microphone**."
+      "a": "Askmemo needs microphone access. Open iOS **Settings → Askmemo** and turn on **Microphone**."
     },
     {
       "q": "Does recording stop when I lock my phone?",
@@ -96,11 +97,11 @@
     },
     {
       "q": "Where are my recordings stored?",
-      "a": "On your device, inside the app. You can also see the audio files in the Files app under **On My iPhone (or On My iPad) → Voice Recorder**."
+      "a": "On your device, inside the app. You can also see the audio files in the Files app under **On My iPhone (or On My iPad) → Askmemo**."
     },
     {
       "q": "Transcribe says Speech Recognition is off.",
-      "a": "Open iOS **Settings → Voice Recorder** and turn on **Speech Recognition**."
+      "a": "Open iOS **Settings → Askmemo** and turn on **Speech Recognition**."
     },
     {
       "q": "My language isn't working.",
@@ -111,13 +112,21 @@
       "a": "AI summaries use Apple's on-device model and need an iPhone or iPad with Apple Intelligence turned on (iOS 26 or later). On other devices the app picks the key sentences from the transcript instead."
     },
     {
+      "q": "How does Ask work?",
+      "a": "Ask searches the transcripts of your recordings on your device and answers in plain language, with links to the exact moments it used — tap one to play from that point. Only recordings that have a transcript can be searched. Answers need an iPhone or iPad with Apple Intelligence turned on (iOS 26 or later); on other devices the app shows the closest moments instead. Ask is part of Premium."
+    },
+    {
+      "q": "Ask says there is nothing to ask yet.",
+      "a": "Ask only searches recordings that have a transcript. Open a recording and tap **Transcribe**, or turn on **Auto-transcribe new recordings** in Settings (Premium)."
+    },
+    {
       "q": "What does Premium add?",
-      "a": "The free version keeps 1 recording. **Premium** removes the limit. It is a yearly auto-renewing subscription that starts with a 3-day free trial. Cancel at least 24 hours before the trial ends to avoid being charged."
+      "a": "The free version keeps 1 recording. **Premium** removes the limit and unlocks Transcribe, Summary, Ask and Auto-transcribe. It is a yearly auto-renewing subscription that starts with a 3-day free trial. Cancel at least 24 hours before the trial ends to avoid being charged."
     },
     {
       "q": "I deleted a recording by mistake.",
       "a": "Open **Folders → Recently Deleted** and tap **Restore**. Deleted recordings are kept there for 30 days."
     }
   ],
-  "tracking_detail": "When you first open Voice Recorder, iOS asks whether the app may track you (App Tracking Transparency). We advertise Voice Recorder with Google Ads. Only if you tap **Allow**, Google Analytics for Firebase receives your device's advertising identifier (IDFA), and app installs, the start of a free trial and subscription purchases (product and price) are shared with Google Ads so we can tell which of our ads brought new users and subscribers. Google also uses on-device conversion measurement, which matches an ad to an install on your device without sending your name, email or phone number. If you tap **Ask App Not to Track**, no IDFA is collected; Apple's SKAdNetwork may still tell Google Ads that an ad led to an install, without identifying you or your device. You can change this any time in iOS Settings → Privacy & Security → Tracking. Your recordings, transcripts and summaries are never used for this."
+  "tracking_detail": "When you first open Askmemo, iOS asks whether the app may track you (App Tracking Transparency). We advertise Askmemo with Google Ads. Only if you tap **Allow**, Google Analytics for Firebase receives your device's advertising identifier (IDFA), and app installs, the start of a free trial and subscription purchases (product and price) are shared with Google Ads so we can tell which of our ads brought new users and subscribers. Google also uses on-device conversion measurement, which matches an ad to an install on your device without sending your name, email or phone number. If you tap **Ask App Not to Track**, no IDFA is collected; Apple's SKAdNetwork may still tell Google Ads that an ad led to an install, without identifying you or your device. You can change this any time in iOS Settings → Privacy & Security → Tracking. Your recordings, transcripts and summaries are never used for this."
 }
