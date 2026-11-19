@@ -117,5 +117,13 @@
   "analytics_provider": "Google Analytics for Firebase",
   "crash_reporting": false,
   "summary_heading": "No account; one small server for AI only.",
-  "retention_note": "Data stored on your device stays there until you delete it or uninstall the app. Our only server is the AI service that forwards caption and hashtag requests to Anthropic; it does not store the text or photo you submit."
+  "retention_note": "Data stored on your device stays there until you delete it or uninstall the app. Our only server is the AI service that forwards caption and hashtag requests to Anthropic; it does not store the text or photo you submit.",
+  "terms": {
+    "ai": true,
+    "third_party": [
+      "Unfollow Tracker is an independent app. It is not affiliated with, endorsed by or sponsored by Instagram or Meta. Instagram is a trademark of Meta Platforms, Inc.",
+      "The App works with your Instagram account, which you sign in to on Instagram's own login page. Your use of Instagram remains subject to [Instagram's Terms of Use](https://help.instagram.com/581066165581870). Instagram may limit, change or stop the data the App relies on at any time, and may restrict accounts it considers to be using automated tools; you use the App with your Instagram account at your own risk.",
+      "AI features send the text and photo you choose to Anthropic through our AI service, as described in the [Privacy Policy](https://sourcegitsmile.github.io/unfollow-tracker/privacy/)."
+    ]
+  }
 }

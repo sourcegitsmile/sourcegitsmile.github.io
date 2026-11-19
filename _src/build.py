@@ -141,6 +141,7 @@ def urls(app):
     return {
         "privacy": f"{base}/privacy/",
         "support": f"{base}/support/",
+        "terms": f"{base}/terms/",
         "store": (f"https://play.google.com/store/apps/details?id={app['package']}" if is_android(app)
                   else f"https://apps.apple.com/app/id{app['app_store_id']}"),
         "home": f"{SITE}/",
@@ -188,7 +189,9 @@ def page(title, body, app):
     # App chưa lên store (app_store_id rỗng) thì bỏ link App Store thay vì để link chết.
     # terms_url (tuỳ chọn): link Điều khoản, ví dụ EULA chuẩn của Apple.
     links = [f'<a href="{u["privacy"]}">Privacy Policy</a>', f'<a href="{u["support"]}">Support</a>']
-    if app.get("terms_url"):
+    if app.get("terms"):
+        links.append(f'<a href="{u["terms"]}">Terms of Use</a>')
+    elif app.get("terms_url"):
         links.append(f'<a href="{e(app["terms_url"])}">Terms of Use</a>')
     if is_android(app) and app.get("store_live"):
         links.append(f'<a href="{u["store"]}">Google Play</a>')
@@ -423,6 +426,65 @@ def support(app):
     return page("Support", body, app)
 
 
+def terms(app):
+    """Terms of Use của riêng app (bật bằng "terms": true). Dùng cho Android — không có EULA chuẩn như Apple.
+    Phần riêng từng app nằm ở app["terms"] dạng object: third_party (dịch vụ app phụ thuộc), ai (bool)."""
+    t = app["terms"] if isinstance(app["terms"], dict) else {}
+    name, dev, mail = e(app["name"]), e(app["developer"]), e(app["contact_email"])
+    u = urls(app)
+    android = is_android(app)
+    store = "Google Play" if android else "the App Store"
+    secs = []
+    secs.append(("Agreement", [f"These Terms of Use (\"Terms\") govern your use of {name} (the \"App\"), provided by {dev} (\"we\", \"us\"). By downloading or using the App you agree to these Terms. If you do not agree, do not use the App. Your use of the App is also subject to our [Privacy Policy]({u['privacy']}) and to the terms of {store}."]))
+    if t.get("third_party"):
+        secs.append(("Third-party services", list(t["third_party"])))
+    secs.append(("Your account and acceptable use", [
+        "You must be old enough to use the App under the laws of your country and under the rules of any service you connect to it.",
+        "You are responsible for the accounts you sign in to through the App and for what you do with them.",
+        "You agree not to use the App to break any law, to harass or spy on other people, to collect other people's personal data, or to interfere with, overload or reverse-engineer the App or any service it connects to.",
+    ]))
+    if app.get("subscription"):
+        cancel = (f"open the **Play Store** app, tap your profile picture, then **Payments & subscriptions → Subscriptions** ([Google's instructions]({PLAY_CANCEL_URL}))"
+                  if android else f"open iOS **Settings**, tap your name, then **Subscriptions** ([Apple's instructions]({APPLE_CANCEL_URL}))")
+        refund = (f"Refunds are handled by Google Play under [its refund policy]({PLAY_REFUND_URL})." if android
+                  else "Refunds are handled by Apple at [reportaproblem.apple.com](https://reportaproblem.apple.com).")
+        secs.append(("Subscriptions and payments", [
+            f"Some features require a paid subscription. The price, billing period and any free trial are shown in the App before you buy. Payment is charged to your {store} account at confirmation of purchase.",
+            "Subscriptions renew automatically at the end of each period at the same price unless you cancel at least 24 hours before the period ends. If a free trial is offered, it converts to a paid subscription when it ends unless you cancel before then.",
+            f"To cancel, {cancel}. Uninstalling the App does not cancel a subscription.",
+            refund,
+        ]))
+    if t.get("ai"):
+        secs.append(("AI-generated content", [
+            "Some features generate text with artificial intelligence. AI output can be inaccurate, incomplete or inappropriate. Review it before you use or publish it; you are responsible for what you post.",
+            "Do not submit content you do not have the right to use, or content that is illegal or harmful.",
+        ]))
+    secs.append(("Intellectual property", [
+        f"The App, its design and its code belong to {dev} and its licensors. We grant you a personal, non-exclusive, non-transferable, revocable licence to use the App on devices you own or control, under these Terms. Content you create or submit remains yours.",
+    ]))
+    secs.append(("Disclaimer", [
+        "The App is provided \"as is\" and \"as available\", without warranties of any kind, to the extent permitted by law. We do not guarantee that the App will be uninterrupted, error-free, or that information it shows (such as follower counts or changes) is complete or accurate, because it depends on third-party services we do not control.",
+    ]))
+    secs.append(("Limitation of liability", [
+        f"To the extent permitted by law, {dev} is not liable for any indirect, incidental, special or consequential damages, or for any loss of data, accounts, followers, profits or reputation arising from your use of the App. Our total liability for any claim is limited to the amount you paid for the App in the 12 months before the claim. Nothing in these Terms limits rights you have under consumer-protection laws that cannot be waived.",
+    ]))
+    secs.append(("Termination", [
+        "You can stop using the App at any time by uninstalling it. We may suspend or end access to the App, or to any feature, if you breach these Terms or if we stop offering the App.",
+    ]))
+    secs.append(("Changes", [
+        "We may update these Terms. When we do, we change the date at the top of this page. Continuing to use the App after a change means you accept the updated Terms.",
+    ]))
+    secs.append(("Contact", [f'<p>Questions about these Terms: <a href="mailto:{mail}">{mail}</a>.</p>']))
+    parts = []
+    for h, ps in secs:
+        parts.append(f"  <h2>{e(h)}</h2>")
+        parts.extend(f"  {p}" if p.startswith("<") else f"  <p>{rich(p)}</p>" for p in ps)
+    body = f"""  <h1>Terms of Use</h1>
+  <p class="sub">{name} · Last updated {human_date(app['last_updated'])}</p>
+""" + "\n".join(parts)
+    return page("Terms of Use", body, app)
+
+
 # ---------------------------------------------------------------- main
 
 def main(only=None):
@@ -442,11 +504,12 @@ def main(only=None):
             failed = True
             continue
         out = ROOT / app["slug"]
-        for kind, render in (("privacy", privacy), ("support", support)):
+        kinds = [("privacy", privacy), ("support", support)] + ([("terms", terms)] if app.get("terms") else [])
+        for kind, render in kinds:
             (out / kind).mkdir(parents=True, exist_ok=True)
             (out / kind / "index.html").write_text(render(app), encoding="utf-8")
         u = urls(app)
-        print(f"✓ {app['slug']}\n    {u['privacy']}\n    {u['support']}")
+        print(f"✓ {app['slug']}\n    {u['privacy']}\n    {u['support']}" + (f"\n    {u['terms']}" if app.get("terms") else ""))
     if failed:
         sys.exit(1)
 
