@@ -1,0 +1,118 @@
+{
+  "slug": "acrewise-android",
+  "platform": "android",
+  "package": "com.measurelandacres",
+  "name": "Acrewise",
+  "device_name": "Acrewise",
+  "developer": "Fire AI App",
+  "tagline": "Measure land area, perimeter and distance on a satellite map on your Android phone — your measurements stay on your device, no account needed.",
+  "contact_email": "hoangdovan.bravo@gmail.com",
+  "last_updated": "2026-11-20",
+  "ads": false,
+  "tracking": true,
+  "analytics": true,
+  "purchases": true,
+  "analytics_provider": "Google Analytics for Firebase",
+  "crash_reporting": false,
+  "storage_summary": "Your measurements — the points you place, their titles and notes — and your settings are stored only on your device. Acrewise has no account and no server of its own. Map imagery comes from Google Maps, address search uses the Android geocoder, and pseudonymous usage events go to Google Analytics for Firebase so we can improve the app.",
+  "nothing_sent_detail": "Your measurements, their coordinates, titles and notes, and your precise location are never sent to us or to any analytics service.",
+  "processors": {
+    "google_maps": {
+      "name": "Google Maps (Maps SDK for Android)",
+      "purpose": "Shows the map and satellite imagery, and the map picture used in shared images and PDF reports.",
+      "data": "the map area you are viewing and basic device information, handled by Google",
+      "policy_url": "https://policies.google.com/privacy"
+    },
+    "android_geocoder": {
+      "name": "Android geocoder (Google Play services)",
+      "purpose": "Finds the places and addresses you type into Search.",
+      "data": "the text you type into the search bar, handled by Google on behalf of your device",
+      "policy_url": "https://policies.google.com/privacy"
+    },
+    "firebase": {
+      "name": "Google Analytics for Firebase",
+      "purpose": "Measures how the app is used (for example whether a measurement was finished or the upgrade screen was opened) so we can fix problems and improve Acrewise, and tells us which of our ads brought new users.",
+      "data": "usage events and purchase events (never your measurements, coordinates, titles, notes, search text or precise location), an app-instance identifier, your Android advertising ID, app version, device model, OS version, locale, and an approximate region derived from your IP address",
+      "policy_url": "https://firebase.google.com/support/privacy"
+    },
+    "google_play_billing": {
+      "name": "Google Play (in-app purchases)",
+      "purpose": "Processes the Acrewise Pro subscription and tells the app whether it is active.",
+      "data": "your purchase record, handled by Google (we never see your payment details, Google Account or name)",
+      "policy_url": "https://policies.google.com/privacy"
+    }
+  },
+  "data_sent": [
+    {
+      "what": "The map area on screen",
+      "to": "google_maps",
+      "why": "Show the map and satellite imagery"
+    },
+    {
+      "what": "The text you type into Search",
+      "to": "android_geocoder",
+      "why": "Find the place or address you searched for"
+    },
+    {
+      "what": "Usage and purchase events (never your measurements, coordinates, notes, search text or precise location), app-instance identifier, Android advertising ID, app and device info, approximate region",
+      "to": "firebase",
+      "why": "Understand how the app is used, improve it, and measure which ads bring new users"
+    },
+    {
+      "what": "Your purchase, only if you subscribe to Acrewise Pro",
+      "to": "google_play_billing",
+      "why": "Process the subscription and confirm that it is active"
+    }
+  ],
+  "stored_on_device": [
+    "Your saved measurements: the points on the map, the area, perimeter or distance, and the title and notes you write.",
+    "Your settings: area and length units and default map style.",
+    "PDF reports you export are created on your device and go only where you choose to share them.",
+    "Delete a measurement at any time in Saved Projects, or delete everything by uninstalling the app."
+  ],
+  "not_collected": [
+    "Your name, email address or any account, because Acrewise has no sign-in.",
+    "Your precise location. Acrewise uses it only on your device to center the map on you; it is never sent to us or to Google Analytics.",
+    "Your measurements, coordinates, titles and notes.",
+    "Payment details — Acrewise Pro is bought through Google Play, and we never see your card, Google Account or name.",
+    "Your contacts, photos or browsing history."
+  ],
+  "permissions": [
+    {
+      "name": "Location (while using the app)",
+      "why": "to center the map on where you are so you can measure the land around you. Your location stays on your device. You can say no and still measure by moving the map or searching an address."
+    }
+  ],
+  "your_controls": [
+    "**Delete any measurement** in Saved Projects.",
+    "**Reset or delete your advertising ID** in Android Settings → Privacy → Ads (the exact path depends on your phone).",
+    "**Turn location access off or on** in Android Settings → Apps → Acrewise → Permissions.",
+    "**Delete all your data** by uninstalling the app or clearing its storage in Android Settings → Apps → Acrewise → Storage — everything lives only on your device."
+  ],
+  "subscription": {
+    "restore_location": "in Settings and on the Acrewise Pro screen"
+  },
+  "tracking_detail": "Google Analytics for Firebase receives your device's Android advertising ID so we can tell which of our ads brought new users. You can reset or delete the advertising ID at any time in Android Settings → Privacy → Ads; once deleted, it is no longer collected. Your measurements, coordinates, notes, search text and precise location are never used for this. Acrewise shows no ads.",
+  "support_faq": [
+    {
+      "q": "How accurate are the measurements?",
+      "a": "Acrewise computes area and distance on the Earth's curved surface, so the maths itself is precise. Accuracy depends on where you place the points and on the quality of the satellite imagery. Results are estimates for planning — **they are not a legal survey** and should not be used to settle property boundaries."
+    },
+    {
+      "q": "How do I measure an area?",
+      "a": "Tap **Area** on the map, then tap each corner of the land. The area and perimeter appear as soon as you place the third point. Drag a point to adjust it, tap between two points to add one, and tap **Finish** to save."
+    },
+    {
+      "q": "Which units can I use?",
+      "a": "Area in acres, square feet, square yards, square meters, hectares, square kilometers and square miles; length in feet, yards, meters, kilometers and miles. Set your defaults in **Settings**."
+    },
+    {
+      "q": "What does Acrewise Pro add?",
+      "a": "Measuring area, perimeter and distance is free for everyone. **Acrewise Pro** unlocks saving your projects and the other Pro tools listed on the upgrade screen. It is an auto-renewing weekly or yearly subscription billed by Google Play; new weekly subscribers may start with a 3-day free trial."
+    },
+    {
+      "q": "Why doesn't the map center on me?",
+      "a": "Location access may be off. Turn it on in Android Settings → Apps → Acrewise → Permissions → Location, or search an address instead."
+    }
+  ]
+}
