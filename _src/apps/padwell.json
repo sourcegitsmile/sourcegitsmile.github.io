@@ -1,0 +1,99 @@
+{
+  "slug": "padwell",
+  "name": "Padwell: Worship Pads & Drums",
+  "device_name": "Padwell",
+  "tagline": "Ambient pads in every key, drum pads and a click for live worship and keyboard players, built to keep sounding on stage.",
+  "app_store_id": "6837691646",
+  "contact_email": "hoangdovan.bravo@gmail.com",
+  "last_updated": "2026-11-22",
+  "terms_url": "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+  "ads": false,
+  "tracking": false,
+  "analytics": true,
+  "crash_reporting": true,
+  "purchases": true,
+  "storage_summary": "Your songs, set lists, sound settings, favorites, drum kits and imported samples are stored only on your iPhone or iPad. Padwell has no account and no server of its own, and every pad, drum and click is played on your device, so the app works fully offline. Anonymous usage events and crash reports go to Google Analytics and Crashlytics for Firebase so we can fix problems and improve the app.",
+  "nothing_sent_detail": "The sounds you play, your songs and set lists, the audio files you import and anything you type are never sent to us or to Google.",
+  "processors": {
+    "apple_storekit": {
+      "name": "Apple (App Store purchases)",
+      "purpose": "Processes the Padwell Pro subscription or lifetime purchase and verifies that it is active.",
+      "data": "your purchase receipt, handled by Apple (we never see your payment details, Apple Account or name)",
+      "policy_url": "https://www.apple.com/legal/privacy/"
+    },
+    "firebase": {
+      "name": "Google Analytics and Crashlytics for Firebase",
+      "purpose": "Measures how the app is used (for example whether a pad was started, a set list was performed or the upgrade screen was opened) and collects crash reports, so we can fix problems and improve the app. Padwell does not read your advertising identifier (IDFA) and does not track you across other apps or websites.",
+      "data": "a small set of usage events and their settings (never your songs, set lists, imported audio or anything you type), crash reports and diagnostic data (the code location of a crash, app version, device model, OS version, free memory), an app-instance identifier, locale, approximate region derived from your IP address, and purchase events (product and result)",
+      "policy_url": "https://firebase.google.com/support/privacy"
+    }
+  },
+  "data_sent": [
+    {
+      "what": "Usage events and purchase events (never your songs, set lists, imported audio or anything you type), app-instance identifier, app and device info, locale, approximate region",
+      "to": "firebase",
+      "why": "Understand how the app is used, fix problems and improve the app"
+    },
+    {
+      "what": "Crash reports and diagnostic data (where in the code a crash happened, app version, device model, OS version)",
+      "to": "firebase",
+      "why": "Find and fix crashes, especially ones that could stop the sound during a service or show"
+    },
+    {
+      "what": "Your purchase receipt",
+      "to": "apple_storekit",
+      "why": "Confirm that your Padwell Pro purchase is active"
+    }
+  ],
+  "stored_on_device": [
+    "Your songs (key, tempo, time signature, pad sound and mix) and set lists in their order.",
+    "Your sound settings, favorite sounds, drum kits and pad colors, and app settings such as crossfade time, tuning and output layout.",
+    "Audio files you import from Files into My Samples. Padwell keeps its own copy on your device and never uploads it.",
+    "All pad sounds and drum kits are built into the app, so they work without an internet connection.",
+    "Delete a song, a set list or a sample at any time in the app, or delete everything by deleting the app."
+  ],
+  "not_collected": [
+    "Your name, email address or any account, because Padwell has no sign-in.",
+    "Your advertising identifier (IDFA). Padwell never asks to track you.",
+    "Audio from your microphone. Padwell does not use the microphone.",
+    "Your location, contacts, photos or browsing history.",
+    "Payment details. Padwell Pro is bought through Apple, and we never see your card, Apple Account or name."
+  ],
+  "permissions": [
+    {
+      "name": "No special permissions",
+      "why": "Padwell does not ask for the camera, microphone, photos, location, contacts, Bluetooth or notifications. Importing a sound uses the system Files picker, which only gives the app the file you choose. A Bluetooth page turner or pedal works as a keyboard and needs no permission."
+    }
+  ],
+  "your_controls": [
+    "**Delete a song, set list or imported sample** in the app, or delete everything by deleting the app. Your data lives only on your device.",
+    "**Manage or cancel your subscription** in iOS Settings → your name → Subscriptions.",
+    "**Restore a purchase** on the Padwell Pro screen or in Settings → Restore Purchases.",
+    "**Turn haptics off** in Settings → Haptics in the app."
+  ],
+  "subscription": {
+    "restore_location": "on the Padwell Pro screen, or in Settings"
+  },
+  "support_faq": [
+    {
+      "q": "How do I start a pad?",
+      "a": "On **Perform**, tap any key. Tap another key to crossfade to it, and tap **Stop** to fade out. Use **Open**, **Major** or **Minor** to match the song."
+    },
+    {
+      "q": "The sound stopped during a call or when I unplugged my headphones.",
+      "a": "iOS pauses audio for calls and Siri. When it ends, tap a key or **Retry** on the banner. Unplugging headphones fades the pad out on purpose so it does not blast from the speaker; turn on **Keep playing on speaker** in **Settings** if you want it to continue."
+    },
+    {
+      "q": "How do I send the click to my in-ears and the pads to the main speakers?",
+      "a": "Use a 3-conductor (TRS) cable or an audio interface, then turn on **Split** under **Output Layout** in **Settings** (Padwell Pro). The click plays on the left channel and pads and drums on the right."
+    },
+    {
+      "q": "Does Padwell need the internet?",
+      "a": "No. Every sound is built into the app and plays on your device, so it works offline on stage."
+    },
+    {
+      "q": "How do I restore my purchase?",
+      "a": "Open the **Padwell Pro** screen or **Settings** and tap **Restore Purchases**, signed in with the same Apple Account you bought with."
+    }
+  ]
+}
