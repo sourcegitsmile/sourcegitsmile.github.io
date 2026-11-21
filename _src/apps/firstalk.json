@@ -11,13 +11,13 @@
   "tracking": true,
   "analytics": true,
   "purchases": true,
-  "storage_summary": "Your learning progress, review schedule, streak, goals and settings are stored only on your iPhone. Firstalk has no account and no server of its own. Speech recognition runs on your iPhone when your device supports it; otherwise the audio of the sentence you say is sent to Apple to be turned into text, and the app never saves recordings. Usage events go to Google Analytics for Firebase so we can fix problems and improve lessons; only if you allow tracking, they are also used to measure our Google Ads campaigns.",
+  "storage_summary": "Your learning progress, review schedule, streak, goals and settings are stored only on your iPhone. Firstalk has no account and no server of its own. Speech recognition runs on your iPhone whenever iOS allows it. If your device does not support on-device recognition, or iOS declines it (for example on some iOS versions or settings), the sentence you just said is sent to Apple's speech recognition service to turn it into text. The app never saves recordings and sends your voice to no one else. Usage events go to Google Analytics for Firebase so we can fix problems and improve lessons; only if you allow tracking, they are also used to measure our Google Ads campaigns.",
   "nothing_sent_detail": "What you say in speaking exercises is never sent to us or to Google Analytics, and no recording is ever saved.",
   "processors": {
     "apple_speech": {
       "name": "Apple Speech Recognition",
-      "purpose": "Turns the English sentence you say in a speaking exercise into text so the app can check it. When your iPhone can recognize English on the device, the audio does not leave your iPhone. Otherwise Apple processes the audio on its servers.",
-      "data": "the audio of the sentence you say in a speaking exercise, only when on-device recognition is not available, handled by Apple",
+      "purpose": "Turns the English sentence you say in a speaking exercise into text so the app can check it. When iOS allows on-device recognition, the audio does not leave your iPhone. If your device does not support it, or iOS declines it (for example on some iOS versions or settings), Apple processes the audio on its servers.",
+      "data": "the audio of the sentence you say in a speaking exercise, only when on-device recognition is not available or iOS declines it, handled by Apple",
       "policy_url": "https://www.apple.com/legal/privacy/"
     },
     "apple_storekit": {
@@ -47,7 +47,7 @@
   },
   "data_sent": [
     {
-      "what": "The audio of the sentence you say in a speaking exercise, only when your iPhone cannot recognize English on the device",
+      "what": "The audio of the sentence you say in a speaking exercise, only when your iPhone cannot recognize English on the device or iOS declines on-device recognition",
       "to": "apple_speech",
       "why": "Turn your speech into text so the app can check it"
     },
@@ -92,7 +92,7 @@
     },
     {
       "name": "Speech Recognition",
-      "why": "to turn what you say into text and check it. Recognition runs on your iPhone when your device supports it; otherwise Apple processes the audio (see above)."
+      "why": "to turn what you say into text and check it. Recognition runs on your iPhone whenever iOS allows it; otherwise Apple processes the audio (see above)."
     },
     {
       "name": "Notifications",
@@ -119,7 +119,7 @@
     },
     {
       "q": "Does Firstalk work offline?",
-      "a": "Yes. Lessons and their audio are built into the app. Speech checking may need an internet connection on iPhones that cannot recognize English on the device."
+      "a": "Yes. Lessons and their audio are built into the app. Speech checking may need an internet connection when your iPhone cannot recognize English on the device or iOS declines on-device recognition."
     },
     {
       "q": "How do I delete my data?",
