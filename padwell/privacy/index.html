@@ -47,15 +47,15 @@
   <p>This policy explains what information <strong>Padwell: Worship Pads &amp; Drums</strong> (“the app”, “we”) collects, why, and who it is shared with. It is written to match exactly what the app does.</p>
 <h2>Summary</h2>
 <div class="box"><ul>
-  <li><strong>No ads, no tracking.</strong> We do not show third-party ads, do not collect your advertising identifier (IDFA), and do not track you across other companies&#x27; apps or websites.</li>
-  <li><strong>No account, no server of our own.</strong> Your songs, set lists, sound settings, favorites, drum kits and imported samples are stored only on your iPhone or iPad. Padwell has no account and no server of its own, and every pad, drum and click is played on your device, so the app works fully offline. Anonymous usage events and crash reports go to Google Analytics and Crashlytics for Firebase so we can fix problems and improve the app.</li>
+  <li><strong>Tracking.</strong> When Padwell is quiet (no pad or click playing), iOS asks once whether Padwell may track you (App Tracking Transparency). We advertise Padwell with Google Ads. Only if you tap <strong>Allow</strong>, Google Analytics for Firebase receives your device&#x27;s advertising identifier (IDFA), and app installs, the start of a free trial and Padwell Pro purchases (product and price) are shared with Google Ads so we can tell which of our ads brought new users. Google also uses on-device conversion measurement, which matches an ad to an install on your iPhone or iPad without sending your name, email or phone number. If you tap <strong>Ask App Not to Track</strong>, no IDFA is collected; Apple&#x27;s SKAdNetwork may still tell Google Ads that an ad led to an install, without identifying you or your device. You can change this any time in iOS Settings → Privacy &amp; Security → Tracking. Your songs, set lists and imported audio are never used for this.</li>
+  <li><strong>No account, no server of our own.</strong> Your songs, set lists, sound settings, favorites, drum kits and imported samples are stored only on your iPhone or iPad. Padwell has no account and no server of its own, and every pad, drum and click is played on your device, so the app works fully offline. Usage events and crash reports go to Google Analytics and Crashlytics for Firebase so we can fix problems and improve the app; only if you allow tracking, they are also used to measure our Google Ads campaigns.</li>
   <li><strong>We never sell your data.</strong></li>
 </ul></div>
 
 <h2>1. What leaves your device</h2>
 <p>The table below lists everything that leaves your device.</p>
 <table><thead><tr><th>Data</th><th>Sent to</th><th>Why</th></tr></thead><tbody>
-<tr><td>Usage events and purchase events (never your songs, set lists, imported audio or anything you type), app-instance identifier, app and device info, locale, approximate region</td><td>Google Analytics and Crashlytics for Firebase</td><td>Understand how the app is used, fix problems and improve the app</td></tr>
+<tr><td>Usage events and purchase events (never your songs, set lists, imported audio or anything you type), app-instance identifier, app and device info, locale, approximate region; the advertising identifier (IDFA) only if you allow tracking</td><td>Google Analytics and Crashlytics for Firebase</td><td>Understand how the app is used, fix problems, improve the app and, only with your permission, measure our Google Ads campaigns</td></tr>
 <tr><td>Crash reports and diagnostic data (where in the code a crash happened, app version, device model, OS version)</td><td>Google Analytics and Crashlytics for Firebase</td><td>Find and fix crashes, especially ones that could stop the sound during a service or show</td></tr>
 <tr><td>Your purchase receipt</td><td>Apple (App Store purchases)</td><td>Confirm that your Padwell Pro purchase is active</td></tr>
 </tbody></table>
@@ -71,7 +71,7 @@
 <p><strong>What we do not collect:</strong></p>
 <ul>
   <li>Your name, email address or any account, because Padwell has no sign-in.</li>
-  <li>Your advertising identifier (IDFA). Padwell never asks to track you.</li>
+  <li>Your name, email address or phone number for advertising. Google&#x27;s on-device measurement in Padwell uses no personal information.</li>
   <li>Audio from your microphone. Padwell does not use the microphone.</li>
   <li>Your location, contacts, photos or browsing history.</li>
   <li>Payment details. Padwell Pro is bought through Apple, and we never see your card, Apple Account or name.</li>
@@ -80,14 +80,15 @@
 <h2>3. Device permissions</h2>
 <p>Padwell: Worship Pads &amp; Drums asks for a permission only when you use the feature that needs it. You can decline, and you can change your choice at any time in iOS Settings.</p>
 <ul>
-  <li><strong>No special permissions</strong> — Padwell does not ask for the camera, microphone, photos, location, contacts, Bluetooth or notifications. Importing a sound uses the system Files picker, which only gives the app the file you choose. A Bluetooth page turner or pedal works as a keyboard and needs no permission.</li>
+  <li><strong>Tracking (App Tracking Transparency)</strong> — asked once, at a quiet moment when no sound is playing (never during a song or a set list). If you allow it, your advertising identifier (IDFA) is used only to measure whether our Google Ads campaigns brought you to Padwell. If you decline, nothing changes in the app and the IDFA is never read.</li>
+  <li><strong>No other permissions</strong> — Padwell does not ask for the camera, microphone, photos, location, contacts, Bluetooth or notifications. Importing a sound uses the system Files picker, which only gives the app the file you choose. A Bluetooth page turner or pedal works as a keyboard and needs no permission.</li>
 </ul>
 
 <h2>4. Who we share data with</h2>
-<p>We do not sell your personal information and do not share it with advertisers. We share data only with these service providers, each of which is bound by its own privacy policy and data-protection terms:</p>
+<p>We do not sell your personal information. We share data only with these service providers, each of which is bound by its own privacy policy and data-protection terms:</p>
 <ul>
   <li><strong>Apple (App Store purchases)</strong> — Processes the Padwell Pro subscription or lifetime purchase and verifies that it is active. Receives: your purchase receipt, handled by Apple (we never see your payment details, Apple Account or name). Their privacy policy: <a href="https://www.apple.com/legal/privacy/" rel="noopener">www.apple.com/legal/privacy</a></li>
-  <li><strong>Google Analytics and Crashlytics for Firebase</strong> — Measures how the app is used (for example whether a pad was started, a set list was performed or the upgrade screen was opened) and collects crash reports, so we can fix problems and improve the app. Padwell does not read your advertising identifier (IDFA) and does not track you across other apps or websites. Receives: a small set of usage events and their settings (never your songs, set lists, imported audio or anything you type), crash reports and diagnostic data (the code location of a crash, app version, device model, OS version, free memory), an app-instance identifier, locale, approximate region derived from your IP address, and purchase events (product and result). Their privacy policy: <a href="https://firebase.google.com/support/privacy" rel="noopener">firebase.google.com/support/privacy</a></li>
+  <li><strong>Google Analytics and Crashlytics for Firebase</strong> — Measures how the app is used (for example whether a pad was started, a set list was performed or the upgrade screen was opened) and collects crash reports, so we can fix problems and improve the app, and — only if you allow tracking — measures whether our Google Ads campaigns led to the app being installed or used, using Google&#x27;s on-device measurement. Receives: a small set of usage events and their settings (never your songs, set lists, imported audio or anything you type), crash reports and diagnostic data (the code location of a crash, app version, device model, OS version, free memory), an app-instance identifier, locale, approximate region derived from your IP address, and purchase events (product and result); if you allow tracking in the App Tracking Transparency prompt, your advertising identifier (IDFA). Their privacy policy: <a href="https://firebase.google.com/support/privacy" rel="noopener">firebase.google.com/support/privacy</a></li>
   <li><strong>Legal requirements</strong> — we may disclose information if required by law, or as part of a merger, acquisition or sale of assets.</li>
 </ul>
 
@@ -104,11 +105,12 @@
   <li><strong>Manage or cancel your subscription</strong> in iOS Settings → your name → Subscriptions.</li>
   <li><strong>Restore a purchase</strong> on the Padwell Pro screen or in Settings → Restore Purchases.</li>
   <li><strong>Turn haptics off</strong> in Settings → Haptics in the app.</li>
+  <li><strong>Allow or stop tracking</strong> at any time in iOS Settings → Privacy &amp; Security → Tracking → Padwell.</li>
 </ul>
 <p>For any other request, email <a href="mailto:hoangdovan.bravo@gmail.com">hoangdovan.bravo@gmail.com</a>. We will respond within 30 days.</p>
 
 <h2>8. Tracking</h2>
-<p>We do <strong>not</strong> track you across other companies' apps or websites. We do not access your advertising identifier (IDFA), so the app never shows the App Tracking Transparency prompt.</p>
+<p>When Padwell is quiet (no pad or click playing), iOS asks once whether Padwell may track you (App Tracking Transparency). We advertise Padwell with Google Ads. Only if you tap <strong>Allow</strong>, Google Analytics for Firebase receives your device&#x27;s advertising identifier (IDFA), and app installs, the start of a free trial and Padwell Pro purchases (product and price) are shared with Google Ads so we can tell which of our ads brought new users. Google also uses on-device conversion measurement, which matches an ad to an install on your iPhone or iPad without sending your name, email or phone number. If you tap <strong>Ask App Not to Track</strong>, no IDFA is collected; Apple&#x27;s SKAdNetwork may still tell Google Ads that an ad led to an install, without identifying you or your device. You can change this any time in iOS Settings → Privacy &amp; Security → Tracking. Your songs, set lists and imported audio are never used for this.</p>
 
 <h2>9. Children</h2>
 <p>The app is not directed at children under 13, and we do not knowingly collect personal information from them. If you believe a child has provided us personal information, contact us and we will delete it.</p>

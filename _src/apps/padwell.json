@@ -8,11 +8,11 @@
   "last_updated": "2026-11-22",
   "terms_url": "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
   "ads": false,
-  "tracking": false,
+  "tracking": true,
   "analytics": true,
   "crash_reporting": true,
   "purchases": true,
-  "storage_summary": "Your songs, set lists, sound settings, favorites, drum kits and imported samples are stored only on your iPhone or iPad. Padwell has no account and no server of its own, and every pad, drum and click is played on your device, so the app works fully offline. Anonymous usage events and crash reports go to Google Analytics and Crashlytics for Firebase so we can fix problems and improve the app.",
+  "storage_summary": "Your songs, set lists, sound settings, favorites, drum kits and imported samples are stored only on your iPhone or iPad. Padwell has no account and no server of its own, and every pad, drum and click is played on your device, so the app works fully offline. Usage events and crash reports go to Google Analytics and Crashlytics for Firebase so we can fix problems and improve the app; only if you allow tracking, they are also used to measure our Google Ads campaigns.",
   "nothing_sent_detail": "The sounds you play, your songs and set lists, the audio files you import and anything you type are never sent to us or to Google.",
   "processors": {
     "apple_storekit": {
@@ -23,16 +23,16 @@
     },
     "firebase": {
       "name": "Google Analytics and Crashlytics for Firebase",
-      "purpose": "Measures how the app is used (for example whether a pad was started, a set list was performed or the upgrade screen was opened) and collects crash reports, so we can fix problems and improve the app. Padwell does not read your advertising identifier (IDFA) and does not track you across other apps or websites.",
-      "data": "a small set of usage events and their settings (never your songs, set lists, imported audio or anything you type), crash reports and diagnostic data (the code location of a crash, app version, device model, OS version, free memory), an app-instance identifier, locale, approximate region derived from your IP address, and purchase events (product and result)",
+      "purpose": "Measures how the app is used (for example whether a pad was started, a set list was performed or the upgrade screen was opened) and collects crash reports, so we can fix problems and improve the app, and — only if you allow tracking — measures whether our Google Ads campaigns led to the app being installed or used, using Google's on-device measurement.",
+      "data": "a small set of usage events and their settings (never your songs, set lists, imported audio or anything you type), crash reports and diagnostic data (the code location of a crash, app version, device model, OS version, free memory), an app-instance identifier, locale, approximate region derived from your IP address, and purchase events (product and result); if you allow tracking in the App Tracking Transparency prompt, your advertising identifier (IDFA)",
       "policy_url": "https://firebase.google.com/support/privacy"
     }
   },
   "data_sent": [
     {
-      "what": "Usage events and purchase events (never your songs, set lists, imported audio or anything you type), app-instance identifier, app and device info, locale, approximate region",
+      "what": "Usage events and purchase events (never your songs, set lists, imported audio or anything you type), app-instance identifier, app and device info, locale, approximate region; the advertising identifier (IDFA) only if you allow tracking",
       "to": "firebase",
-      "why": "Understand how the app is used, fix problems and improve the app"
+      "why": "Understand how the app is used, fix problems, improve the app and, only with your permission, measure our Google Ads campaigns"
     },
     {
       "what": "Crash reports and diagnostic data (where in the code a crash happened, app version, device model, OS version)",
@@ -54,14 +54,18 @@
   ],
   "not_collected": [
     "Your name, email address or any account, because Padwell has no sign-in.",
-    "Your advertising identifier (IDFA). Padwell never asks to track you.",
+    "Your name, email address or phone number for advertising. Google's on-device measurement in Padwell uses no personal information.",
     "Audio from your microphone. Padwell does not use the microphone.",
     "Your location, contacts, photos or browsing history.",
     "Payment details. Padwell Pro is bought through Apple, and we never see your card, Apple Account or name."
   ],
   "permissions": [
     {
-      "name": "No special permissions",
+      "name": "Tracking (App Tracking Transparency)",
+      "why": "asked once, at a quiet moment when no sound is playing (never during a song or a set list). If you allow it, your advertising identifier (IDFA) is used only to measure whether our Google Ads campaigns brought you to Padwell. If you decline, nothing changes in the app and the IDFA is never read."
+    },
+    {
+      "name": "No other permissions",
       "why": "Padwell does not ask for the camera, microphone, photos, location, contacts, Bluetooth or notifications. Importing a sound uses the system Files picker, which only gives the app the file you choose. A Bluetooth page turner or pedal works as a keyboard and needs no permission."
     }
   ],
@@ -69,7 +73,8 @@
     "**Delete a song, set list or imported sample** in the app, or delete everything by deleting the app. Your data lives only on your device.",
     "**Manage or cancel your subscription** in iOS Settings → your name → Subscriptions.",
     "**Restore a purchase** on the Padwell Pro screen or in Settings → Restore Purchases.",
-    "**Turn haptics off** in Settings → Haptics in the app."
+    "**Turn haptics off** in Settings → Haptics in the app.",
+    "**Allow or stop tracking** at any time in iOS Settings → Privacy & Security → Tracking → Padwell."
   ],
   "subscription": {
     "restore_location": "on the Padwell Pro screen, or in Settings"
@@ -95,5 +100,6 @@
       "q": "How do I restore my purchase?",
       "a": "Open the **Padwell Pro** screen or **Settings** and tap **Restore Purchases**, signed in with the same Apple Account you bought with."
     }
-  ]
+  ],
+  "tracking_detail": "When Padwell is quiet (no pad or click playing), iOS asks once whether Padwell may track you (App Tracking Transparency). We advertise Padwell with Google Ads. Only if you tap **Allow**, Google Analytics for Firebase receives your device's advertising identifier (IDFA), and app installs, the start of a free trial and Padwell Pro purchases (product and price) are shared with Google Ads so we can tell which of our ads brought new users. Google also uses on-device conversion measurement, which matches an ad to an install on your iPhone or iPad without sending your name, email or phone number. If you tap **Ask App Not to Track**, no IDFA is collected; Apple's SKAdNetwork may still tell Google Ads that an ad led to an install, without identifying you or your device. You can change this any time in iOS Settings → Privacy & Security → Tracking. Your songs, set lists and imported audio are never used for this."
 }
