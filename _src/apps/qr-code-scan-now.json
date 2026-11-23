@@ -1,0 +1,128 @@
+{
+  "slug": "qr-code-scan-now",
+  "name": "QR Code Scan Now",
+  "device_name": "QR Code",
+  "tagline": "Scan QR codes and barcodes, look up products, create your own QR codes and scan documents on your iPhone or iPad, with your scan history kept on your device.",
+  "app_store_id": "6793878508",
+  "contact_email": "smiletechhk.inc@gmail.com",
+  "last_updated": "2026-11-23",
+  "terms_url": "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+  "ads": false,
+  "tracking": true,
+  "analytics": true,
+  "purchases": true,
+  "storage_summary": "Your scan history, the QR codes you create, scanned documents and your settings are stored only on your iPhone or iPad. QR Code Scan Now has no account and no server of its own. When you open a product barcode, its number is sent to a product database to show the product's name and details. Usage events and crash reports go to Google Firebase, and install and purchase events go to Tenjin, so we can improve the app and measure our ads.",
+  "nothing_sent_detail": "The contents of the QR codes you scan or create, your documents and your photos are never sent to us or to any analytics or advertising service.",
+  "processors": {
+    "firebase": {
+      "name": "Google Firebase (Analytics, Crashlytics, Cloud Messaging)",
+      "purpose": "Measures how the app is used, collects crash reports so we can fix problems, and delivers notifications. With your permission it also tells Google Ads which ads led to installs and purchases.",
+      "data": "usage and purchase events (product and price), a random app-instance identifier, crash reports and basic diagnostic information (app version, device model, OS version), a push-notification token, locale and an approximate region derived from your IP address, and your device's advertising identifier (IDFA) only if you allow tracking",
+      "policy_url": "https://firebase.google.com/support/privacy"
+    },
+    "tenjin": {
+      "name": "Tenjin (ad attribution)",
+      "purpose": "Tells us which of our ads (for example Google Ads or Apple Search Ads) brought each install, trial and subscription, and passes those results to the ad networks we use.",
+      "data": "install, session, trial and purchase events (product and price), device model, OS version, locale, country, the app's vendor identifier (IDFV), an Apple Search Ads attribution token, and your device's advertising identifier (IDFA) only if you allow tracking",
+      "policy_url": "https://tenjin.com/privacy/"
+    },
+    "barcode_lookup": {
+      "name": "Barcode Lookup and USDA FoodData Central (product databases)",
+      "purpose": "Return the name, image and details of a product when you open a product barcode.",
+      "data": "the number of the product barcode you open (for example a UPC or EAN), never your scan history or anything else about you",
+      "policy_url": "https://www.barcodelookup.com/privacy-policy"
+    },
+    "apple_iap": {
+      "name": "Apple (In-App Purchase)",
+      "purpose": "Processes your subscription and tells the app whether it is active.",
+      "data": "your purchase record, handled by Apple (we never see your payment details, Apple Account or name)",
+      "policy_url": "https://www.apple.com/legal/privacy/"
+    }
+  },
+  "data_sent": [
+    {
+      "what": "The number of a product barcode you open, to look up the product's name and details",
+      "to": "barcode_lookup",
+      "why": "Show you which product the barcode belongs to"
+    },
+    {
+      "what": "Usage events, purchase events (product and price), crash reports, a random app-instance identifier, a push-notification token, basic diagnostic information, locale and approximate region, and the IDFA only if you allow tracking",
+      "to": "firebase",
+      "why": "Understand how the app is used, fix crashes, deliver notifications and measure our Google Ads campaigns"
+    },
+    {
+      "what": "Install, session, trial and purchase events, device model, OS version, locale, country, the app's vendor identifier, an Apple Search Ads attribution token, and the IDFA only if you allow tracking",
+      "to": "tenjin",
+      "why": "Measure which of our ads brought new users and subscribers"
+    },
+    {
+      "what": "Your purchase, only if you subscribe",
+      "to": "apple_iap",
+      "why": "Process the subscription and confirm that it is active"
+    }
+  ],
+  "stored_on_device": [
+    "Your scan history and the contents of the codes you scan.",
+    "The QR codes you create.",
+    "Documents you scan or import, and PDFs you make from them.",
+    "Your settings, including the theme and the Face ID app lock."
+  ],
+  "not_collected": [
+    "The contents of the QR codes and barcodes you scan or create.",
+    "Your documents and photos.",
+    "Your name, email address or phone number — there is no account.",
+    "Your precise location. The app asks for location only to show the map when you create a location QR code, and it never sends your location anywhere.",
+    "Your contacts or browsing history.",
+    "Payment details — subscriptions are bought through Apple, and we never see your card, Apple Account or name."
+  ],
+  "permissions": [
+    {
+      "name": "Camera",
+      "why": "to scan QR codes, barcodes and documents. Images from the camera are processed on your device and are not uploaded."
+    },
+    {
+      "name": "Photos",
+      "why": "to import an image that contains a QR code or barcode, and to save QR codes and scanned documents to your photo library."
+    },
+    {
+      "name": "Location (while using the app)",
+      "why": "to show your current position on the map when you create a location QR code. You can say no and type a place instead."
+    },
+    {
+      "name": "Face ID",
+      "why": "to lock the app if you turn on the app lock. Face ID is checked by iOS; the app never receives your face data."
+    },
+    {
+      "name": "Notifications",
+      "why": "to send you app notifications. You can say no and still use every feature."
+    },
+    {
+      "name": "Tracking (App Tracking Transparency)",
+      "why": "to measure which of our ads brought you to the app. See Tracking below. You can say no and still use every feature."
+    }
+  ],
+  "tracking_detail": "When you first open QR Code Scan Now, iOS asks whether the app may track you (App Tracking Transparency). We advertise the app with Google Ads. Only if you tap **Allow**, Tenjin and Google Analytics for Firebase receive your device's advertising identifier (IDFA), and app installs, the start of a free trial and subscription purchases (product and price) are shared with Google Ads so we can tell which of our ads brought new users and subscribers. Google also uses on-device conversion measurement, which matches an ad to an install on your device without sending your name, email or phone number. If you tap **Ask App Not to Track**, no IDFA is collected; Apple's SKAdNetwork may still tell Google Ads that an ad led to an install, without identifying you or your device. You can change this any time in iOS Settings → Privacy & Security → Tracking. The contents of the codes you scan are never used for this.",
+  "your_controls": [
+    "**Turn tracking off** in iOS Settings → Privacy & Security → Tracking.",
+    "**Delete your scan history** inside the app, or delete everything by removing the app from your device.",
+    "**Turn notifications off or on** in iOS Settings → Notifications → QR Code.",
+    "**Change camera, photo and location access** in iOS Settings → QR Code."
+  ],
+  "subscription": {
+    "restore_location": "on the Premium screen"
+  },
+  "support_faq": [
+    {
+      "q": "The camera does not scan.",
+      "a": "Check that camera access is allowed in iOS Settings → QR Code, hold the code steady inside the frame, and turn on the flashlight in low light."
+    },
+    {
+      "q": "Where is my scan history stored?",
+      "a": "Only on your device. It is not uploaded, so deleting the app also deletes the history."
+    }
+  ],
+  "analytics_provider": "Google Analytics for Firebase",
+  "crash_reporting": true,
+  "summary_heading": "No account, no server of our own.",
+  "retention_note": "Data stored on your device stays there until you delete it or remove the app. We do not run a server of our own; analytics, crash and attribution data are kept by Google Firebase and Tenjin under their own retention policies."
+}
