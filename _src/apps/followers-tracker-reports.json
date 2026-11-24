@@ -1,0 +1,148 @@
+{
+  "slug": "followers-tracker-reports",
+  "name": "Reports for Followers Tracker",
+  "device_name": "Reports+Followers",
+  "developer": "Smile Show Technology Limited",
+  "tagline": "See who unfollowed you, who doesn't follow you back, your story viewers and how your Instagram audience changes, with your follower lists kept on your iPhone or iPad.",
+  "app_store_id": "6763493899",
+  "contact_email": "smiletechhk.inc@gmail.com",
+  "last_updated": "2026-11-24",
+  "terms_url": "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+  "ads": false,
+  "tracking": true,
+  "analytics": true,
+  "purchases": true,
+  "storage_summary": "You sign in on Instagram's own login page inside the app. Your Instagram session, follower and following lists, and the reports the app builds from them are stored only on your device; the app talks to Instagram directly from your phone and does not upload these lists to us or anyone else. Reports+Followers has no account and no server of its own. Usage events and crash reports go to Google Firebase, install and purchase events go to Tenjin so we can measure our ads, and — only if you use an AI writer and agree first — the text you type and the photo you pick go to OpenAI.",
+  "nothing_sent_detail": "Your Instagram password, your follower and following lists and your Instagram activity are never sent to us or to any analytics or advertising service.",
+  "processors": {
+    "openai": {
+      "name": "OpenAI (AI caption, hashtag and bio writer)",
+      "purpose": "Writes the captions, hashtags and bios you ask for. The app sends the request straight to OpenAI; it does not pass through a server of ours.",
+      "data": "the text you type and, if you add one, the photo you pick",
+      "policy_url": "https://openai.com/policies/privacy-policy/",
+      "requires_consent": true
+    },
+    "firebase": {
+      "name": "Google Firebase (Analytics, Crashlytics, Remote Config)",
+      "purpose": "Measures how the app is used, collects crash reports so we can fix problems, and supplies app settings. With your permission it also tells Google which ads led to installs and purchases.",
+      "data": "usage and purchase events (product, never your follower lists or Instagram data), a random app-instance identifier, crash reports and basic diagnostic information (app version, device model, OS version), locale and an approximate region derived from your IP address, and your device's advertising identifier (IDFA) only if you allow tracking",
+      "policy_url": "https://firebase.google.com/support/privacy"
+    },
+    "tenjin": {
+      "name": "Tenjin (ad attribution)",
+      "purpose": "Tells us which of our ads brought each install, trial and subscription, and passes those results to the ad networks we use.",
+      "data": "install, session, trial and subscription events (product and price), device model, OS version, locale, country, the app's vendor identifier (IDFV), an Apple Search Ads attribution token, and your device's advertising identifier (IDFA) only if you allow tracking",
+      "policy_url": "https://tenjin.com/privacy/"
+    },
+    "apple_iap": {
+      "name": "Apple (In-App Purchase)",
+      "purpose": "Processes your subscription and tells the app whether it is active.",
+      "data": "your purchase record, handled by Apple (we never see your payment details, Apple Account or name)",
+      "policy_url": "https://www.apple.com/legal/privacy/"
+    }
+  },
+  "data_sent": [
+    {
+      "what": "The text you type and the photo you pick in the AI Caption Writer, AI Hashtag Generator or AI Bio Writer",
+      "to": "openai",
+      "why": "Write the caption, hashtags or bio you asked for",
+      "user_content": true
+    },
+    {
+      "what": "Usage events, purchase events, crash reports, a random app-instance identifier, basic diagnostic information, locale and approximate region, and the IDFA only if you allow tracking — never your follower lists or Instagram data",
+      "to": "firebase",
+      "why": "Understand how the app is used, fix crashes and measure our ads"
+    },
+    {
+      "what": "Install, session, trial and subscription events, device model, OS version, locale, country, the app's vendor identifier, an Apple Search Ads attribution token, and the IDFA only if you allow tracking",
+      "to": "tenjin",
+      "why": "Measure which of our ads brought new users and subscribers"
+    },
+    {
+      "what": "Your purchase, only if you subscribe",
+      "to": "apple_iap",
+      "why": "Process the subscription and confirm that it is active"
+    }
+  ],
+  "stored_on_device": [
+    "Your Instagram session from signing in on Instagram's own login page. The app never sees or stores your Instagram password.",
+    "Your follower and following lists, the profiles you track in Ghost Mode, and the reports the app builds from them (unfollowers, who doesn't follow you back, story viewers, admirers).",
+    "Captions, hashtags and bios you generated.",
+    "Your settings, including whether you allowed AI processing.",
+    "Stories, posts and reports you choose to save, which go to your photo library."
+  ],
+  "not_collected": [
+    "Your Instagram password — you sign in on Instagram's own page.",
+    "Your follower and following lists or anything else from your Instagram account — they stay on your device.",
+    "Your name, email address or phone number — there is no account.",
+    "Your precise location or your contacts.",
+    "Payment details — subscriptions are bought through Apple, and we never see your card, Apple Account or name."
+  ],
+  "permissions": [
+    {
+      "name": "Photos",
+      "why": "to pick a photo for the AI writers or to repost, and to save stories, posts and exported reports to your photo library."
+    },
+    {
+      "name": "Camera",
+      "why": "only if Instagram asks you to verify your identity while you sign in. The camera is used by Instagram's own page; the app does not keep or upload the images."
+    },
+    {
+      "name": "Notifications",
+      "why": "to remind you about new results in the app. You can say no and still use every feature."
+    },
+    {
+      "name": "Tracking (App Tracking Transparency)",
+      "why": "to measure which of our ads brought you to the app. See Tracking below. You can say no and still use every feature."
+    }
+  ],
+  "tracking_detail": "When you first open Reports+Followers, iOS asks whether the app may track you (App Tracking Transparency). Only if you tap **Allow**, Tenjin and Google Analytics for Firebase receive your device's advertising identifier (IDFA), and app installs, the start of a free trial and subscription purchases (product and price) are shared with the ad networks we use so we can tell which of our ads brought new users and subscribers. If you tap **Ask App Not to Track**, no IDFA is collected; Apple's SKAdNetwork may still tell an ad network that an ad led to an install, without identifying you or your device. You can change this any time in iOS Settings → Privacy & Security → Tracking. Your Instagram data is never used for this.",
+  "ai_consent": {
+    "screen_name": "Allow AI Processing?",
+    "decline_label": "Not Now",
+    "withdraw": "Nothing is sent to OpenAI until you tap **Allow**. To withdraw your permission, delete and reinstall the app; it will ask again before the next request."
+  },
+  "your_controls": [
+    "**Turn tracking off** in iOS Settings → Privacy & Security → Tracking.",
+    "**Log out of Instagram** in Settings; this removes your Instagram session from the app.",
+    "**Delete all your data** with Settings → Reset Local Data, or by deleting the app from your device.",
+    "**Change photo, camera and notification access** in iOS Settings → Reports+Followers."
+  ],
+  "subscription": {
+    "restore_location": "in Settings (Restore Purchase) and on the Premium screen"
+  },
+  "support_faq": [
+    {
+      "q": "Is this an official Instagram app?",
+      "a": "No. Reports+Followers is an independent app and is not affiliated with, endorsed by or sponsored by Instagram or Meta."
+    },
+    {
+      "q": "Does the app see my Instagram password?",
+      "a": "No. You sign in on Instagram's own login page inside the app. The app keeps only the session Instagram gives it, on your device."
+    },
+    {
+      "q": "Where are my follower lists stored?",
+      "a": "Only on your device. The app talks to Instagram directly from your phone and never uploads your lists."
+    },
+    {
+      "q": "The numbers look out of date or the update stops.",
+      "a": "Tap Update and keep the app open while it runs. Instagram limits how often lists can be loaded, so if you see a rate-limit message, wait about a minute and try again."
+    },
+    {
+      "q": "How do I restore my subscription?",
+      "a": "Open **Settings → Restore Purchase**, signed in with the same Apple Account you subscribed with."
+    }
+  ],
+  "analytics_provider": "Google Analytics for Firebase",
+  "crash_reporting": true,
+  "summary_heading": "No account, no server of our own.",
+  "retention_note": "Data stored on your device stays there until you delete it or remove the app. We do not run a server of our own; analytics, crash and attribution data are kept by Google Firebase and Tenjin, and AI requests by OpenAI, under their own retention policies.",
+  "terms": {
+    "ai": true,
+    "third_party": [
+      "Reports+Followers is an independent app. It is not affiliated with, endorsed by or sponsored by Instagram or Meta. Instagram is a trademark of Meta Platforms, Inc.",
+      "The App works with your Instagram account, which you sign in to on Instagram's own login page. Your use of Instagram remains subject to [Instagram's Terms of Use](https://help.instagram.com/581066165581870). Instagram may limit, change or stop the data the App relies on at any time, and may restrict accounts it considers to be using automated tools; you use the App with your Instagram account at your own risk.",
+      "AI features send the text and photo you choose to OpenAI, as described in the [Privacy Policy](https://sourcegitsmile.github.io/followers-tracker-reports/privacy/)."
+    ]
+  }
+}
